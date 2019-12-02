@@ -1,0 +1,51 @@
+/*  HOME RESTAURANT */
+
+.card-list h2 {
+  font-family: "Nunito", sans-serif;
+}
+.card-list .card {
+  width: 245px;
+}
+.card-list .card .card-picture {
+  position: relative;
+}
+.card-list .card .card-picture img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.card-list .card .card-picture span {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #fff;
+  font-size: 22px;
+  color: #e80c6e;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-list .card h3 a {
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
+  color: #217b33;
+}
+.card-list .card .localisation {
+  font-size: 16px;
+  color: #777;
+  font-weight: 700;
+}
+.card-list .card ul {
+  color: #666;
+}
+.card-list .card ul li {
+  color: #666;
+}
+.card-list .card .description {
+}
+.card-list .card .reviex {
+}
