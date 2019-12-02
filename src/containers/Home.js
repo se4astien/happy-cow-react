@@ -11,7 +11,11 @@ export default function Home() {
         <div className="wrapper center column">
           <h1>Find Vegan Restaurants Nearby</h1>
           <form>
-            <input type="text" value="" />
+            <input
+              type="text"
+              value="search"
+              placeholder="Search for city, region, or zipcode"
+            />
             <button type="submit">
               <ion-icon name="search"></ion-icon>
             </button>
@@ -55,24 +59,26 @@ export default function Home() {
             <a href="#">The gallery</a>
           </h3>
           <p className="localisation">Vendays-montalivet, France</p>
-          <ul>
-            <li>
-              <ion-icon name="star"></ion-icon>
-            </li>
-            <li>
-              <ion-icon name="star"></ion-icon>
-            </li>
-            <li>
-              <ion-icon name="star"></ion-icon>
-            </li>
-            <li>
-              <ion-icon name="star"></ion-icon>
-            </li>
-            <li>
-              <ion-icon name="star"></ion-icon>
-            </li>
-          </ul>
-          <span className="review">3 reviews</span>
+          <div className="review center">
+            <ul>
+              <li>
+                <ion-icon name="star"></ion-icon>
+              </li>
+              <li>
+                <ion-icon name="star"></ion-icon>
+              </li>
+              <li>
+                <ion-icon name="star"></ion-icon>
+              </li>
+              <li>
+                <ion-icon name="star"></ion-icon>
+              </li>
+              <li>
+                <ion-icon name="star"></ion-icon>
+              </li>
+            </ul>
+            <span>3 reviews</span>
+          </div>
           <p>
             Surf restaurant serving smoothies and organic dishes. Open daily,
             hours may vary. Use of eggs ...

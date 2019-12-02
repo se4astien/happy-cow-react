@@ -46,6 +46,16 @@
   color: #666;
 }
 .card-list .card .description {
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  color: #222;
 }
-.card-list .card .reviex {
+.card-list .card .review ul {
+  justify-content: left;
+}
+
+.card-list .card .review ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
