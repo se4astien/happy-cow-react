@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 
 export default function CardRestaurantDetail() {
-  let { id } = useParams();
+  let { id } = useParams(); // récupère l'ID de l'annonce
   return (
     <section className="offer">
       <div className="container">

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../css/App.css";
 import logo from "../images/logo-happycow.png";
 
@@ -9,21 +10,21 @@ export default function Header() {
         <li className="submenu">
           <ul>
             <li>
-              <a href="/">
+              <Link to="/">
                 <img src={logo} alt="logo HappyCow" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#">Restaurants & stores</a>
+              <Link to="#">Restaurants & stores</Link>
             </li>
             <li>
-              <a href="#">Veg topcis</a>
+              <Link to="#">Veg topcis</Link>
             </li>
             <li>
-              <a href="#">Recips</a>
+              <Link to="#">Recips</Link>
             </li>
             <li>
-              <a href="#">Feed the cow</a>
+              <Link to="#">Feed the cow</Link>
             </li>
           </ul>
         </li>
@@ -31,10 +32,10 @@ export default function Header() {
         <li className="member center">
           <ul>
             <li>
-              <a href="#">Add listing</a>
+              <Link to="#">Add listing</Link>
             </li>
             <li>
-              <a href="#">Login / Join</a>
+              <Link to="#">Login / Join</Link>
             </li>
           </ul>
         </li>
