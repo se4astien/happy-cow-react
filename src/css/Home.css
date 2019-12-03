@@ -1,6 +1,7 @@
 /*  HOME RESTAURANT */
 .card-list {
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .card-list h2 {
   font-size: 30px;
@@ -9,6 +10,7 @@
 }
 .card-list .card {
   width: 245px;
+  margin-bottom: 50px;
 }
 .card-list .card .card-picture {
   position: relative;

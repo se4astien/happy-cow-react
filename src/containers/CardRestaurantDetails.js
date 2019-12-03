@@ -7,7 +7,7 @@ import {
   useParams
 } from "react-router-dom";
 
-export default function CardRestaurantDetail() {
+export default function CardRestaurantDetails() {
   let { id } = useParams(); // récupère l'ID de l'annonce
   return (
     <section className="offer">

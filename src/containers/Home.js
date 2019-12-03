@@ -12,7 +12,7 @@ import CardRestaurant from "../components/CardRestaurant";
 export default function Home() {
   // Création des états
   const [isLoading, setIsLoading] = useState(true);
-  const [products, setProducts] = useState("");
+  const [restaurants, setRestaurants] = useState("");
 
   // useEffect permet de charger les données uniquement à la création du composant
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function Home() {
         console.log(response.data[0].name); // Veganie
         console.log(response.data[0].address); // 96 rue Quincampoix, Paris, France, 75003
 
-        setProducts(response.data);
+        setRestaurants(response.data);
         setIsLoading(false);
       } catch (error) {
         alert("An error occured");
@@ -36,40 +36,57 @@ export default function Home() {
   return (
     <>
       <Search />
-      {isLoading === true ? (
-        <p>Chargement...</p>
-      ) : (
-        <section className="wrapper">
-          <div className="card-list center">
-            <h2>Vegan Food Near Me</h2>
-            <p>
-              <Link to="#">View all</Link>
-            </p>
-          </div>
-          <div className="card-list center">
-            <CardRestaurant
-              picture={products[0].pictures[0]}
-              name={products[0].name}
-              description={products[0].description}
-            />
-            <CardRestaurant
-              picture={products[1].pictures[0]}
-              name={products[1].name}
-              description={products[1].description}
-            />
-            <CardRestaurant
-              picture={products[2].pictures[0]}
-              name={products[2].name}
-              description={products[2].description}
-            />
-            <CardRestaurant
-              picture={products[3].pictures[0]}
-              name={products[3].name}
-              description={products[3].description}
-            />
-          </div>
-        </section>
-      )}
+      <section className="wrapper">
+        <div className="card-list center">
+          <h2>Vegan Food Near Me</h2>
+          <p>
+            <Link to="#">View all</Link>
+          </p>
+        </div>
+        <div className="card-list center">
+          {isLoading === true ? (
+            <p>Chargement...</p>
+          ) : (
+            <>
+              <CardRestaurant
+                picture={restaurants[0].pictures[0]}
+                name={restaurants[0].name}
+                description={restaurants[0].description}
+              />
+              <CardRestaurant
+                picture={restaurants[0].pictures[0]}
+                name={restaurants[0].name}
+                description={restaurants[0].description}
+              />
+              <CardRestaurant
+                picture={restaurants[0].pictures[0]}
+                name={restaurants[0].name}
+                description={restaurants[0].description}
+              />
+              <CardRestaurant
+                picture={restaurants[0].pictures[0]}
+                name={restaurants[0].name}
+                description={restaurants[0].description}
+              />
+              <CardRestaurant
+                picture={restaurants[0].pictures[0]}
+                name={restaurants[0].name}
+                description={restaurants[0].description}
+              />
+              <CardRestaurant
+                picture={restaurants[0].pictures[0]}
+                name={restaurants[0].name}
+                description={restaurants[0].description}
+              />
+              <CardRestaurant
+                picture={restaurants[0].pictures[0]}
+                name={restaurants[0].name}
+                description={restaurants[0].description}
+              />
+            </>
+          )}
+        </div>
+      </section>
     </>
   );
 }
