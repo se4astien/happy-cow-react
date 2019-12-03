@@ -1,7 +1,11 @@
 /*  HOME RESTAURANT */
-
+.card-list {
+  justify-content: space-between;
+}
 .card-list h2 {
-  font-family: "Nunito", sans-serif;
+  font-size: 30px;
+  color: #444;
+  font-weight: 800;
 }
 .card-list .card {
   width: 245px;
@@ -29,33 +33,39 @@
   justify-content: center;
   align-items: center;
 }
+
 .card-list .card h3 a {
-  font-family: "Nunito", sans-serif;
   font-size: 18px;
   color: #217b33;
+  font-weight: 800;
 }
 .card-list .card .localisation {
-  font-size: 16px;
+  font-size: 14px;
   color: #777;
   font-weight: 700;
-}
-.card-list .card ul {
-  color: #666;
 }
 .card-list .card ul li {
   color: #666;
 }
-.card-list .card .description {
-  font-family: "Nunito", sans-serif;
-  font-size: 16px;
-  color: #222;
+.card-list .card .review {
+  display: flex;
 }
-.card-list .card .review ul {
-  justify-content: left;
-}
-
 .card-list .card .review ul {
   display: flex;
+  justify-content: left;
   margin: 0;
   padding: 0;
+}
+.card-list .card .review ul li {
+  font-size: 20px;
+  color: yellowgreen;
+}
+.card-list .card .review span {
+  font-size: 12px;
+  color: #777;
+  margin: 3px 0 0 5px;
+}
+.card-list .card .description {
+  font-size: 16px;
+  color: #222;
 }

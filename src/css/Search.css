@@ -1,7 +1,7 @@
 /* HOME SEARCH */
 .search {
   background: url("../images/bg-home-large.jpg") no-repeat 0 0;
-  height: 320px;
+  height: 300px;
   background-size: cover;
 }
 .search h1 {
@@ -9,26 +9,29 @@
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.85);
   font-weight: 800;
   color: #fff;
+  margin: 40px 0 20px 0;
 }
 .search form {
   position: relative;
   z-index: 1;
-  width: 80%;
+  width: 75%;
 }
 .search form input {
   width: 100%;
   height: 48px;
   border-radius: 30px;
   border: none;
+  padding-left: 20px;
+  color: #777;
+  font-size: 16px;
 }
 .search form button {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -15px;
   width: 44px;
   height: 44px;
   margin-top: 3px;
-  margin-right: 2px;
   padding-top: 4px;
   border-radius: 50%;
   font-size: 31px;
@@ -36,7 +39,7 @@
   color: #fff;
 }
 .search .svg {
-  margin-top: 100px;
+  margin-top: 65px;
 }
 .search .svg .cls {
   fill: #fff;

@@ -1,22 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
 
-.red {
-  background: red;
-}
-.blue {
-  background: blue;
-}
-.green {
-  background: green;
-}
-.yellow {
-  background: yellow;
+html,
+body {
+  font-family: "Nunito", sans-serif;
 }
 
 .wrapper {
   margin: 0 auto;
   width: 96vw;
-  max-width: 1200px;
+  max-width: 1120px;
 }
 
 .center {
@@ -33,18 +25,21 @@
 ul,
 li {
   list-style: none;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "Nunito", sans-serif;
-  font-style: normal;
-  font-weight: normal;
+  margin: 0;
+  padding: 0;
 }
 
 a {
   text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
 }
 
 /* HEADER */
