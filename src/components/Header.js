@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// Css
 import "../css/App.css";
+// Images
 import logo from "../images/logo-happycow.png";
 
 export default function Header() {

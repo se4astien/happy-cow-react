@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/App.css";
+// Components
 import FooterCard from "../components/FooterCard";
 
 export default function Footer() {

@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams
-} from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+// CSS
 import "../css/CardProductDetails.css";
+// Components
+import CardProductDetailsHero from "../components/CardProductDetailsHero";
+import CardProductDetailsMap from "../components/CardProductDetailsMap";
 
 export default function CardProductDetails() {
   let { id, name, description } = useParams(); // récupère l'ID de l'annonce
@@ -32,59 +30,9 @@ export default function CardProductDetails() {
 
   return (
     <section>
-      <div className="hero">
-        <div className="wrapper">
-          <div className="center">
-            <div className="infos">
-              <h1>The gallery</h1>
-              <div className="review flex">
-                <ul>
-                  <li>
-                    <ion-icon name="star"></ion-icon>
-                  </li>
-                  <li>
-                    <ion-icon name="star"></ion-icon>
-                  </li>
-                  <li>
-                    <ion-icon name="star"></ion-icon>
-                  </li>
-                  <li>
-                    <ion-icon name="star"></ion-icon>
-                  </li>
-                  <li>
-                    <ion-icon name="star"></ion-icon>
-                  </li>
-                </ul>
-                <span>( 3 reviews )</span>
-              </div>
-            </div>
-
-            <div className="options">
-              <ul>
-                <li>
-                  <ion-icon name="create"></ion-icon>
-                  <span>Update</span>
-                </li>
-                <li>
-                  <ion-icon name="star"></ion-icon>
-                  <span>Favorite</span>
-                </li>
-                <li>
-                  <ion-icon name="airplane"></ion-icon>
-                  <span>Trip</span>
-                </li>
-                <li>
-                  <ion-icon name="share-alt"></ion-icon>
-                  <span>Share</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-       
+      <CardProductDetailsHero /> 
       <div className="wrapper flex">
-        <div className="content-desc">
+        <div className="details-desc">
           <ul className="full-space">
             <li>
               <i class="material-icons green">access_time</i>
@@ -137,14 +85,12 @@ export default function CardProductDetails() {
             </ul>
           </div>
 
-          <div className="listing-images">
+          <div className="listing-images flex">
             <div>
               <img
                 src="https://images.happycow.net/venues/500/17/38/hcmp173847_668236.jpeg"
                 alt="#"
               />
-            </div>
-            <div>
               <img
                 src="https://images.happycow.net/venues/500/17/38/hcmp173847_668236.jpeg"
                 alt="#"
@@ -153,7 +99,7 @@ export default function CardProductDetails() {
           </div>
         </div>
 
-        <div className="map">mettre la map ici</div>
+        <CardProductDetailsMap />
       </div>
       <div>restaurant : {id}</div>
       <div className="infos">restaurant : {name}</div>

@@ -42,63 +42,66 @@ header {
   font-size: 13px;
   margin: 5px 0 0 5px;
 }
-.hero .options ul li {
-  width: 40px;
-  height: 40px;
+
+.hero .options {
+  margin-top: 25px;
+}
+.hero .options ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero .options ul li a .md {
   background-color: #fff;
+  padding: 10px;
   color: #7f47bc;
   border-radius: 50%;
   margin: 0 20px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
   font-size: 22px;
 }
 .hero .options ul li span {
-  position: absolute;
-  top: 47px;
-  font-size: 16px;
   color: #fff;
   font-weight: bold;
+  margin-top: 5px;
 }
 
-.content-desc {
+.details-desc {
   flex: 2;
   margin-top: 20px;
 }
-.content-desc li {
+.details-desc li {
   width: 220px;
 }
-.content-desc .rub {
+.details-desc .rub {
   margin: 0 0 0 10px;
 }
-.content-desc .rub .title {
+.details-desc .rub .title {
   font-size: 16px;
   color: #217b33;
   font-weight: bold;
   text-transform: uppercase;
 }
-.content-desc .rub .desc {
+.details-desc .rub .desc {
   font-size: 14px;
   color: #333;
   padding-top: 5px;
 }
-.content-desc .description {
+
+.details-desc .description {
   margin-top: 60px;
 }
-.content-desc .description .desc {
+.details-desc .description .desc {
   color: #444;
 }
-.content-desc .description .cat {
+.details-desc .description .cat {
   color: #777;
 }
 
-.content-desc ul li {
+.details-desc ul li {
   width: auto;
   margin-right: 10px;
 }
-.content-desc .actions a {
+.details-desc .actions a {
   font-size: 16px;
   text-transform: capitalize;
   font-weight: 600;
@@ -109,6 +112,22 @@ header {
   margin: 30px 0;
 }
 
-.map {
+.details-desc .listing-images img {
+  width: 225px;
+  height: 225px;
+  margin-right: 20px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.details-map {
   flex: 1;
+}
+
+.details-map .box {
+  background-color: #f8f5f4;
+  height: auto;
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: left;
 }
