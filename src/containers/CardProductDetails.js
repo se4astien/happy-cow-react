@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 // CSS
 import "../css/CardProductDetails.css";
@@ -9,6 +9,7 @@ import CardProductDetailsMap from "../components/CardProductDetailsMap";
 
 export default function CardProductDetails() {
   let { id, name, description } = useParams(); // récupère l'ID de l'annonce
+
   // const [isLoading, setIsLoading] = useState(true);
   // const [product, setProduct] = useState({});
 
@@ -30,26 +31,27 @@ export default function CardProductDetails() {
 
   return (
     <section>
-      <CardProductDetailsHero /> 
+      <CardProductDetailsHero />
+       
       <div className="wrapper flex">
         <div className="details-desc">
           <ul className="full-space">
             <li>
-              <i class="material-icons green">access_time</i>
+              <i className="material-icons green">access_time</i>
               <div className="rub column">
                 <span className="title">Hours</span>
                 <span className="desc">Tell us</span>
               </div>
             </li>
             <li>
-              <i class="material-icons green">phone</i>
+              <i className="material-icons green">phone</i>
               <div className="rub column">
                 <span className="title">Contact</span>
                 <span className="desc">+33-622098695</span>
               </div>
             </li>
             <li>
-              <i class="material-icons green">where_to_vote</i>
+              <i className="material-icons green">where_to_vote</i>
               <div className="rub column">
                 <span className="title">Find</span>
                 <span className="desc">
@@ -74,12 +76,14 @@ export default function CardProductDetails() {
             <ul>
               <li>
                 <Link to="#" className="btn btn-purple">
-                  <i class="material-icons">create</i> <span>Add review</span>
+                  <i className="material-icons">create</i>{" "}
+                  <span>Add review</span>
                 </Link>
               </li>
               <li>
                 <Link to="#" className="btn btn-purple">
-                  <i class="material-icons">local_see</i> <span>Add photo</span>
+                  <i className="material-icons">local_see</i>{" "}
+                  <span>Add photo</span>
                 </Link>
               </li>
             </ul>

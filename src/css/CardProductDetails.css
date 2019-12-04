@@ -124,6 +124,11 @@ header {
   flex: 1;
 }
 
+.details-map #map {
+  height: 180px;
+  width: auto;
+}
+
 .details-map .box {
   background-color: #f8f5f4;
   height: auto;
