@@ -1,4 +1,4 @@
-/*  HOME RESTAURANT */
+/*  HOME CONTENT */
 .card-list {
   justify-content: space-between;
   flex-wrap: wrap;
@@ -6,6 +6,10 @@
 .card-list h2 {
   font-size: 30px;
   color: #444;
+  font-weight: 800;
+}
+.card-list .view-all {
+  font-size: 16px;
   font-weight: 800;
 }
 .card-list .card {

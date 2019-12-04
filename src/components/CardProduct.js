@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function CardRestaurant(props) {
+export default function CardProduct(props) {
   return (
     <div className="card">
       <div className="card-picture">
-        <Link to="/card-restaurant-detail/123456">
-          <img src={props.picture} alt="cover restaurant" />
+        <Link to={"/card-restaurant-details/" + props.placeId}>
+          <img src={props.thumbnail} alt={props.name} />
           <span>
             <ion-icon name="heart-empty"></ion-icon>
           </span>
@@ -14,7 +14,9 @@ export default function CardRestaurant(props) {
       </div>
 
       <h3 className="no-margin no-padding">
-        <Link to="/card-restaurant-detail/123456">{props.name}</Link>
+        <Link to={"/card-restaurant-detail/" + props.placeId}>
+          {props.name}
+        </Link>
       </h3>
 
       <p className="localisation no-margin">Vendays-montalivet, France</p>

@@ -1,0 +1,13 @@
+header {
+  border-bottom: none;
+}
+
+.hero {
+  background: #8a2091;
+}
+.hero h1 {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 800;
+  text-transform: capitalize;
+}

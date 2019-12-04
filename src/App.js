@@ -6,8 +6,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 // import Containers
-import Home from "./containers/Home";
-import CardRestaurantDetails from "./containers/CardRestaurantDetails";
+import Products from "./containers/Products";
+import CardProductDetails from "./containers/CardProductDetails";
 
 export default function App() {
   return (
@@ -15,10 +15,10 @@ export default function App() {
       <Header />
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Products />
         </Route>
-        <Route path="/card-restaurant-detail/:id">
-          <CardRestaurantDetails />
+        <Route path="/card-restaurant-details/:id">
+          <CardProductDetails />
         </Route>
       </Switch>
       <Footer />
