@@ -32,10 +32,14 @@ export default function Header() {
         <li className="member center">
           <ul>
             <li>
-              <Link to="#">Add listing</Link>
+              <Link to="#" className="btn btn-white">
+                Add listing
+              </Link>
             </li>
             <li>
-              <Link to="#">Login / Join</Link>
+              <Link to="#" className="btn btn-purple">
+                Login / Join
+              </Link>
             </li>
           </ul>
         </li>

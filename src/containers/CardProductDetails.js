@@ -87,21 +87,21 @@ export default function CardProductDetails() {
         <div className="content-desc">
           <ul className="full-space">
             <li>
-              <i class="material-icons">access_time</i>
+              <i class="material-icons green">access_time</i>
               <div className="rub column">
                 <span className="title">Hours</span>
                 <span className="desc">Tell us</span>
               </div>
             </li>
             <li>
-              <i class="material-icons">phone</i>
+              <i class="material-icons green">phone</i>
               <div className="rub column">
                 <span className="title">Contact</span>
                 <span className="desc">+33-622098695</span>
               </div>
             </li>
             <li>
-              <i class="material-icons">where_to_vote</i>
+              <i class="material-icons green">where_to_vote</i>
               <div className="rub column">
                 <span className="title">Find</span>
                 <span className="desc">
@@ -125,10 +125,14 @@ export default function CardProductDetails() {
           <div className="actions">
             <ul>
               <li>
-                <Link to="#">Add review</Link>
+                <Link to="#" className="btn btn-purple">
+                  <i class="material-icons">create</i> <span>Add review</span>
+                </Link>
               </li>
               <li>
-                <Link to="#">Add photo</Link>
+                <Link to="#" className="btn btn-purple">
+                  <i class="material-icons">local_see</i> <span>Add photo</span>
+                </Link>
               </li>
             </ul>
           </div>

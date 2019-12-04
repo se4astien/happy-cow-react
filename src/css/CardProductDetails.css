@@ -4,6 +4,13 @@ header {
 
 .material-icons {
   font-size: 40px;
+}
+.btn .material-icons {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.green {
   color: #217b33;
 }
 
@@ -78,13 +85,28 @@ header {
   padding-top: 5px;
 }
 .content-desc .description {
-  margin-top: 20px;
+  margin-top: 60px;
 }
 .content-desc .description .desc {
   color: #444;
 }
 .content-desc .description .cat {
   color: #777;
+}
+
+.content-desc ul li {
+  width: auto;
+  margin-right: 10px;
+}
+.content-desc .actions a {
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 600;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  margin: 30px 0;
 }
 
 .map {

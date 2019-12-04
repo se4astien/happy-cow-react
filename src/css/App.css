@@ -53,6 +53,20 @@ a {
   padding: 0;
 }
 
+.btn {
+  padding: 0 20px;
+  border-radius: 40px;
+}
+.btn-white {
+  color: #7c4ec4;
+  border: 2px solid #7c4ec4;
+}
+.btn-purple {
+  background-color: #7c4ec4;
+  color: #fff;
+  border: 2px solid #7c4ec4;
+}
+
 /* HEADER */
 header {
   margin-top: 10px;
@@ -65,11 +79,12 @@ header {
   margin: 0;
   padding: 0 20px;
 }
-
+.menu .submenu a {
+  color: #666;
+}
 .menu ul li {
   display: flex;
   align-items: center;
-  font-family: "Nunito", sans-serif;
 }
 .menu img {
   width: 220px;
@@ -78,9 +93,7 @@ header {
 .menu ul li a {
   margin: 0;
   padding: 0 20px;
-  font-family: "Nunito", sans-serif;
   font-size: 16px;
-  color: #666;
   text-transform: capitalize;
   font-weight: 600;
   line-height: 40px;
@@ -88,10 +101,6 @@ header {
 
 .menu .member ul li a {
   margin: 10px 20px 0 0;
-  padding: 0 20px;
-  color: #7c4ec4;
-  border: 1px solid #7c4ec4;
-  border-radius: 40px;
 }
 
 /* FOOTER */
@@ -101,7 +110,7 @@ footer {
   color: #e1e1e1;
   padding: 20px 0 50px 0;
 }
-.footer {
+.footer-card {
   display: flex;
   justify-content: space-between;
 }

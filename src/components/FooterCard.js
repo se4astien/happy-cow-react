@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function FooterMenu() {
+export default function FooterCard() {
   return (
     <div>
       <h4>Community</h4>
-      <ul>
+      <ul className="column">
         <li>Ambassadors</li>
         <li>Events</li>
         <li>Forum</li>

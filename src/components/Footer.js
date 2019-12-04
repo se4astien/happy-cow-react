@@ -1,16 +1,16 @@
 import React from "react";
 import "../css/App.css";
-import FooterMenu from "../components/FooterMenu";
+import FooterCard from "../components/FooterCard";
 
 export default function Footer() {
   return (
     <footer>
       <div className="wrapper">
-        <div className="footer">
-          <FooterMenu />
-          <FooterMenu />
-          <FooterMenu />
-          <FooterMenu />
+        <div className="footer-card">
+          <FooterCard />
+          <FooterCard />
+          <FooterCard />
+          <FooterCard />
         </div>
       </div>
     </footer>
