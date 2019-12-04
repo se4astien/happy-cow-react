@@ -43,7 +43,7 @@ export default function Products() {
             <Link to="#">View all ></Link>
           </div>
         </div>
-        <div className="card-list content">
+        <div className="card-list full-space">
           {isLoading === true ? (
             <p>Chargement...</p>
           ) : (

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap");
 
 html,
 body {
@@ -21,7 +21,7 @@ body {
   align-items: center;
 }
 
-.content {
+.full-space {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -55,6 +55,7 @@ a {
 
 /* HEADER */
 header {
+  margin-top: 10px;
   border-bottom: 4px solid #7c4ec4;
 }
 .menu {
@@ -73,7 +74,6 @@ header {
 .menu img {
   width: 220px;
   height: 49px;
-  margin-top: 10px;
 }
 .menu ul li a {
   margin: 0;

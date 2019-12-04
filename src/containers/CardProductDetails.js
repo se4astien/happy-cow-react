@@ -34,73 +34,75 @@ export default function CardProductDetails() {
     <section>
       <div className="hero">
         <div className="wrapper">
-          <div className="infos">
-            <h1>The gallery</h1>
-            <div className="review flex">
+          <div className="center">
+            <div className="infos">
+              <h1>The gallery</h1>
+              <div className="review flex">
+                <ul>
+                  <li>
+                    <ion-icon name="star"></ion-icon>
+                  </li>
+                  <li>
+                    <ion-icon name="star"></ion-icon>
+                  </li>
+                  <li>
+                    <ion-icon name="star"></ion-icon>
+                  </li>
+                  <li>
+                    <ion-icon name="star"></ion-icon>
+                  </li>
+                  <li>
+                    <ion-icon name="star"></ion-icon>
+                  </li>
+                </ul>
+                <span>( 3 reviews )</span>
+              </div>
+            </div>
+
+            <div className="options">
               <ul>
                 <li>
-                  <ion-icon name="star" className="star"></ion-icon>
+                  <ion-icon name="create"></ion-icon>
+                  <span>Update</span>
                 </li>
                 <li>
-                  <ion-icon name="star" className="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <span>Favorite</span>
                 </li>
                 <li>
-                  <ion-icon name="star" className="star"></ion-icon>
+                  <ion-icon name="airplane"></ion-icon>
+                  <span>Trip</span>
                 </li>
                 <li>
-                  <ion-icon name="star" className="star"></ion-icon>
-                </li>
-                <li>
-                  <ion-icon name="star" className="star"></ion-icon>
+                  <ion-icon name="share-alt"></ion-icon>
+                  <span>Share</span>
                 </li>
               </ul>
-              <span>3 reviews</span>
             </div>
-          </div>
-
-          <div className="options">
-            <ul>
-              <li>
-                <ion-icon name="star" className="star"></ion-icon>
-                <span>Update</span>
-              </li>
-              <li>
-                <ion-icon name="star" className="star"></ion-icon>
-                <span>Favorite</span>
-              </li>
-              <li>
-                <ion-icon name="star" className="star"></ion-icon>
-                <span>Trip</span>
-              </li>
-              <li>
-                <ion-icon name="star" className="star"></ion-icon>
-                <span>Share</span>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
-
-      <div className="wrapper">
-        <div className="content">
-          <ul>
+       
+      <div className="wrapper flex">
+        <div className="content-desc">
+          <ul className="full-space">
             <li>
-              <ion-icon name="star" className="star"></ion-icon>
-              <div>
+              <ion-icon name="time"></ion-icon>
+              <div className="column">
                 <span>Hours</span>
                 <span>Tell us</span>
               </div>
             </li>
             <li>
-              <ion-icon name="star" className="star"></ion-icon>
-              <div>
+              <ion-icon name="call"></ion-icon>
+              <div className="column">
                 <span>Contact</span>
                 <span>+33-622098695</span>
               </div>
             </li>
             <li>
-              <ion-icon name="star" className="star"></ion-icon>
-              <div>
+              <i class="material-icons">accessibility</i>
+              <div className="column">
                 <span>Find</span>
                 <span>
                   49 Ave Brémontier, Vendays-montalivet, France, 33930
@@ -143,7 +145,6 @@ export default function CardProductDetails() {
 
         <div className="map">mettre la map ici</div>
       </div>
-
       <div>restaurant : {id}</div>
       <div className="infos">restaurant : {name}</div>
       <div className="infos">restaurant : {description}</div>
