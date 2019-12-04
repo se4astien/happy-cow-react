@@ -87,36 +87,36 @@ export default function CardProductDetails() {
         <div className="content-desc">
           <ul className="full-space">
             <li>
-              <ion-icon name="time"></ion-icon>
-              <div className="column">
-                <span>Hours</span>
-                <span>Tell us</span>
+              <i class="material-icons">access_time</i>
+              <div className="rub column">
+                <span className="title">Hours</span>
+                <span className="desc">Tell us</span>
               </div>
             </li>
             <li>
-              <ion-icon name="call"></ion-icon>
-              <div className="column">
-                <span>Contact</span>
-                <span>+33-622098695</span>
+              <i class="material-icons">phone</i>
+              <div className="rub column">
+                <span className="title">Contact</span>
+                <span className="desc">+33-622098695</span>
               </div>
             </li>
             <li>
-              <i class="material-icons">accessibility</i>
-              <div className="column">
-                <span>Find</span>
-                <span>
+              <i class="material-icons">where_to_vote</i>
+              <div className="rub column">
+                <span className="title">Find</span>
+                <span className="desc">
                   49 Ave Brémontier, Vendays-montalivet, France, 33930
                 </span>
               </div>
             </li>
           </ul>
 
-          <div>
-            <p className="description">
+          <div className="description">
+            <p className="desc">
               Surf restaurant serving smoothies and organic dishes. Open daily,
               hours may vary. Use of eggs reported in Aug 2019.
             </p>
-            <p className="categories">
+            <p className="cat">
               Categories: Ovo, Organic, Mediterranean, Beer/Wine, Take-out,
               Mexican, European, French, Fusion, Gluten-free
             </p>
@@ -135,10 +135,16 @@ export default function CardProductDetails() {
 
           <div className="listing-images">
             <div>
-              <img src="#" alt="#" />
+              <img
+                src="https://images.happycow.net/venues/500/17/38/hcmp173847_668236.jpeg"
+                alt="#"
+              />
             </div>
             <div>
-              <img src="#" alt="#" />
+              <img
+                src="https://images.happycow.net/venues/500/17/38/hcmp173847_668236.jpeg"
+                alt="#"
+              />
             </div>
           </div>
         </div>
