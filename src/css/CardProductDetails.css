@@ -43,7 +43,8 @@ header {
 }
 
 .hero .options {
-  margin-top: 25px;
+  margin-top: 15px;
+  margin-right: 18px;
 }
 .hero .options ul li a {
   display: flex;
@@ -56,7 +57,7 @@ header {
   color: #7f47bc;
   border-radius: 50%;
   margin: 0 20px;
-  font-size: 22px;
+  font-size: 20px;
 }
 .hero .options ul li span {
   color: #fff;
@@ -65,11 +66,12 @@ header {
 }
 
 .details-desc {
-  flex: 2;
-  margin-top: 20px;
+  width: 66%;
+  margin: 30px 50px 0 0;
 }
-.details-desc li {
-  width: 220px;
+.details-desc ul li {
+  width: 30%;
+  margin-right: 10px;
 }
 .details-desc .rub {
   margin: 0 0 0 10px;
@@ -87,7 +89,7 @@ header {
 }
 
 .details-desc .description {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 .details-desc .description .desc {
   color: #444;
@@ -96,9 +98,9 @@ header {
   color: #777;
 }
 
-.details-desc ul li {
-  width: auto;
+.details-desc .actions ul li {
   margin-right: 10px;
+  width: auto;
 }
 .details-desc .actions a {
   font-size: 16px;
@@ -120,7 +122,7 @@ header {
 }
 
 .details-map {
-  flex: 1;
+  margin-top: -40px;
 }
 
 .details-map #map {
