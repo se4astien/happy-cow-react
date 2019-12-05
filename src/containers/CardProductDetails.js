@@ -76,13 +76,13 @@ export default function CardProductDetails() {
             <ul>
               <li>
                 <Link to="#" className="btn btn-purple">
-                  <i className="material-icons">create</i>{" "}
+                  <i className="material-icons">create</i>
                   <span>Add review</span>
                 </Link>
               </li>
               <li>
                 <Link to="#" className="btn btn-purple">
-                  <i className="material-icons">local_see</i>{" "}
+                  <i className="material-icons">local_see</i>
                   <span>Add photo</span>
                 </Link>
               </li>
@@ -106,8 +106,8 @@ export default function CardProductDetails() {
         <CardProductDetailsMap />
       </div>
       <div>restaurant : {id}</div>
-      <div className="infos">restaurant : {name}</div>
-      <div className="infos">restaurant : {description}</div>
+      <div>restaurant : {name}</div>
+      <div>restaurant : {description}</div>
     </section>
   );
 }

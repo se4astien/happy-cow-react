@@ -13,7 +13,7 @@ export default function CardProduct(props) {
         </Link>
       </div>
 
-      <h3 className="no-margin no-padding">
+      <h3 className="no-margin no-padding ellipsis">
         <Link to={"/card-restaurant-detail/" + props.placeId}>
           {props.name}
         </Link>
