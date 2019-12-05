@@ -31,8 +31,7 @@ export default function CardProductDetails() {
 
   return (
     <section>
-      <CardProductDetailsHero />
-       
+      <CardProductDetailsHero /> 
       <div className="wrapper flex">
         <div className="details-desc">
           <ul className="full-space">

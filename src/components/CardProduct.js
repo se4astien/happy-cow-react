@@ -6,7 +6,7 @@ export default function CardProduct(props) {
   const stars = [];
   const half = 0.5;
 
-  for (let i = 0.5; i < 5; i++) {
+  for (let i = half; i < 5; i++) {
     if (i < props.rating) {
       stars.push(
         <li className="yellowgreen">
@@ -27,7 +27,6 @@ export default function CardProduct(props) {
       );
     }
   }
-  // <ion-icon key={i} name="star-half"></ion-icon>
 
   return (
     <div className="card">

@@ -1,16 +1,32 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-export default function CardProductDetailsHero({ rating }) {
+export default function CardProductDetailsHero({ props, rating }) {
+  let { id } = useParams(); // récupère l'ID de l'annonce
+
   // ratings
   const stars = [];
-  for (let i = 0; i < 5; i++) {
-    if (i < rating) {
+  const half = 0.5;
+
+  for (let i = half; i < 5; i++) {
+    if (i < 5) {
       stars.push(
-        <ion-icon key={i} name="star" className="yellowgreen"></ion-icon>
+        <li className="yellowgreen">
+          <ion-icon key={i} name="star"></ion-icon>
+        </li>
+      );
+    } else if (i <= 5) {
+      stars.push(
+        <li className="yellowgreen">
+          <ion-icon key={i} name="star-half"></ion-icon>
+        </li>
       );
     } else {
-      stars.push(<ion-icon key={i} name="star" className="grey"></ion-icon>);
+      stars.push(
+        <li className="grey">
+          <ion-icon key={i} name="star"></ion-icon>
+        </li>
+      );
     }
   }
   return (
