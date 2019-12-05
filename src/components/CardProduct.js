@@ -4,12 +4,19 @@ import { Link } from "react-router-dom";
 export default function CardProduct(props) {
   // ratings
   const stars = [];
+  const half = 0.5;
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0.5; i < 5; i++) {
     if (i < props.rating) {
       stars.push(
         <li className="yellowgreen">
           <ion-icon key={i} name="star"></ion-icon>
+        </li>
+      );
+    } else if (i <= props.rating) {
+      stars.push(
+        <li className="yellowgreen">
+          <ion-icon key={i} name="star-half"></ion-icon>
         </li>
       );
     } else {
@@ -20,6 +27,7 @@ export default function CardProduct(props) {
       );
     }
   }
+  // <ion-icon key={i} name="star-half"></ion-icon>
 
   return (
     <div className="card">
