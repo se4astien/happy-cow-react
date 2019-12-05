@@ -1,9 +1,16 @@
 /*  HOME CONTENT */
-
 .ellipsis {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.yellowgreen {
+  color: yellowgreen;
+}
+
+.grey {
+  color: #777;
 }
 
 .card-list {
@@ -57,9 +64,7 @@
   color: #777;
   font-weight: 700;
 }
-.card-list .card ul li {
-  color: #666;
-}
+
 .card-list .card .review {
   display: flex;
 }
@@ -71,7 +76,6 @@
 }
 .card-list .card .review ul li {
   font-size: 20px;
-  color: yellowgreen;
 }
 .card-list .card .review span {
   font-size: 12px;

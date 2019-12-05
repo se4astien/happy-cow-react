@@ -1,7 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function CardProductDetailsHero() {
+export default function CardProductDetailsHero({ rating }) {
+  // ratings
+  const stars = [];
+  for (let i = 0; i < 5; i++) {
+    if (i < rating) {
+      stars.push(
+        <ion-icon key={i} name="star" className="yellowgreen"></ion-icon>
+      );
+    } else {
+      stars.push(<ion-icon key={i} name="star" className="grey"></ion-icon>);
+    }
+  }
   return (
     <>
       <div className="hero">
@@ -11,21 +22,7 @@ export default function CardProductDetailsHero() {
               <h1>The gallery</h1>
               <div className="review flex">
                 <ul>
-                  <li>
-                    <ion-icon name="star"></ion-icon>
-                  </li>
-                  <li>
-                    <ion-icon name="star"></ion-icon>
-                  </li>
-                  <li>
-                    <ion-icon name="star"></ion-icon>
-                  </li>
-                  <li>
-                    <ion-icon name="star"></ion-icon>
-                  </li>
-                  <li>
-                    <ion-icon name="star"></ion-icon>
-                  </li>
+                  <li>{stars}</li>
                 </ul>
                 <span>( 3 reviews )</span>
               </div>
