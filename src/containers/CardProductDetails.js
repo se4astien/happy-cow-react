@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react";
 // import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  useParams
+} from "react-router-dom";
 // CSS
 import "../css/CardProductDetails.css";
 // Components
 import CardProductDetailsHero from "../components/CardProductDetailsHero";
 import CardProductDetailsMap from "../components/CardProductDetailsMap";
 
-export default function CardProductDetails() {
-  let { id, name, description } = useParams(); // récupère l'ID de l'annonce
+export default function CardProductDetails(props) {
+  let { id } = useParams(); // récupère l'ID de l'annonce
 
   // const [isLoading, setIsLoading] = useState(true);
   // const [product, setProduct] = useState({});
@@ -105,8 +110,6 @@ export default function CardProductDetails() {
         <CardProductDetailsMap />
       </div>
       <div>restaurant : {id}</div>
-      <div>restaurant : {name}</div>
-      <div>restaurant : {description}</div>
     </section>
   );
 }

@@ -3,6 +3,8 @@ import { Link, useParams } from "react-router-dom";
 
 export default function CardProductDetailsHero({ props, rating }) {
   let { id } = useParams(); // récupère l'ID de l'annonce
+  let { name } = useParams();
+  let { description } = useParams();
 
   // ratings
   const stars = [];

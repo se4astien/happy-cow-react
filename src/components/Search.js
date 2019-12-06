@@ -1,6 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Search() {
+  let city = "paris"; // par default
+
   return (
     <section className="search">
       <div className="wrapper center column">
@@ -8,12 +11,15 @@ export default function Search() {
         <form>
           <input
             type="text"
-            name="firstname"
-            placeholder="Search for city, region, or zipcode"
+            name="city"
+            placeholder="Search for city, region or zipcode"
+            // value={city}
           />
-          <button type="submit">
-            <ion-icon name="search"></ion-icon>
-          </button>
+          <Link to={"/products-search/" + city}>
+            <button type="submit">
+              <ion-icon name="search"></ion-icon>
+            </button>
+          </Link>
         </form>
       </div>
       <div className="svg">

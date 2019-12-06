@@ -24,6 +24,7 @@
   padding-left: 20px;
   color: #777;
   font-size: 16px;
+  outline: none;
 }
 .search form button {
   position: absolute;
@@ -37,6 +38,7 @@
   font-size: 31px;
   background-color: #7c4ec4;
   color: #fff;
+  cursor: pointer;
 }
 .search .svg {
   margin-top: 65px;
