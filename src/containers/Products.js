@@ -12,7 +12,9 @@ import CardProduct from "../components/CardProduct";
 export default function Products() {
   // Création des états
   const [isLoading, setIsLoading] = useState(true);
-  const [products, setProducts] = useState("");
+  const [products, setProducts] = useState({});
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [postsPerPage, setPostsPerPage] = useState(10);
 
   // useEffect permet de charger les données uniquement à la création du composant
   useEffect(() => {
@@ -32,7 +34,15 @@ export default function Products() {
       }
     };
     fetchData();
-  }, []); // on réinitialise la fonction fetchData avec un tableau vide
+  }, []); // charge une seule fois le tableau
+
+  // Get current posts
+
+  // posts, setPosts = products, setProducts
+  // const indexOfLastPost = currentPage * postsPerPage;
+  // const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  // const currentPosts = products.slice(indexOfFirstPost, indexOfLastPost);
+
   return (
     <>
       <Search />

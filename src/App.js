@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 
 // import Containers
 import Products from "./containers/Products";
-import ProductsSearch from "./containers/ProductsSearch";
+import ProductsSearchFilter from "./containers/ProductsSearchFilter";
 import CardProductDetails from "./containers/CardProductDetails";
 
 export default function App() {
@@ -19,7 +19,7 @@ export default function App() {
           <Products />
         </Route>
         <Route path="/products-search/:city">
-          <ProductsSearch />
+          <ProductsSearchFilter />
         </Route>
         <Route path="/card-product-details/:id">
           <CardProductDetails />

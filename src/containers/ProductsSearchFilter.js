@@ -8,7 +8,7 @@ import {
 // CSS
 import "../css/ProductsSearch.css";
 
-export default function ProductsSearch() {
+export default function ProductsSearchfilter() {
   let { city } = useParams(); // récupère la ville du résultat de recherche
 
   return <div>nom de la ville : {city}</div>;
