@@ -14,7 +14,7 @@ const ProductsTest = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(20);
+  const [postsPerPage] = useState(40);
 
   useEffect(() => {
     const fetchProducts = async () => {

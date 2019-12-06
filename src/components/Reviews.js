@@ -1,6 +1,6 @@
 import React from "react";
 
-const Review = ({ post }) => {
+const Reviews = ({ post }) => {
   // Ratings
   const stars = [];
   const half = 0.5;
@@ -36,4 +36,4 @@ const Review = ({ post }) => {
     </div>
   );
 };
-export default Review;
+export default Reviews;

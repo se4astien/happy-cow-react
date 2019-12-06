@@ -91,3 +91,15 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.pagination {
+  justify-content: center;
+}
+.pagination li {
+  border: 1px solid #ccc;
+  margin: 10px 5px 40px 5px;
+  padding: 7px 10px;
+}
+.pagination li a {
+  color: #777;
+}

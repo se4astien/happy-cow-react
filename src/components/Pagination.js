@@ -8,7 +8,7 @@ export default function Pagination({ postsPerPage, totalPosts, paginate }) {
   }
 
   return (
-    <ul>
+    <ul className="pagination">
       {pageNumbers.map(number => (
         <li key={number}>
           <a onClick={() => paginate(number)} href="#">
