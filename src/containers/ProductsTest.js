@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-// import CSS
-import "../css/App.css";
-import "../css/Search.css";
-import "../css/Products.css";
-// import Components
-import Search from "../components/Search";
-import CardProduct from "../components/CardProduct";
+import Products from "./Products";
+import Posts from "../components/Posts";
 import Pagination from "../components/Pagination";
 
 const ProductsTest = () => {
@@ -17,7 +12,7 @@ const ProductsTest = () => {
   const [postsPerPage] = useState(20);
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchPosts = async () => {
       setLoading(true);
       const res = await axios.get(
         "https://res.cloudinary.com/lereacteur-apollo/raw/upload/v1575242111/10w-full-stack/Scraping/restaurants.json"
@@ -25,7 +20,7 @@ const ProductsTest = () => {
       setPosts(res.data);
       setLoading(false);
     };
-    fetchProducts();
+    fetchPosts();
   }, []); // pour éviter une boucle infinie au chargement du composant
 
   // console.log(posts);
@@ -39,23 +34,15 @@ const ProductsTest = () => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   return (
-    <>
-      <Search />
-      <section className="wrapper">
-        <div className="card-list center">
-          <h2>Vegan Food Near Me</h2>
-          <div className="view-all">
-            <Link to="#">View all ></Link>
-          </div>
-        </div>
-        <CardProduct posts={currentPosts} loading={loading} />
-        <Pagination
-          postsPerPage={postsPerPage}
-          totalPosts={posts.length}
-          paginate={paginate}
-        />
-      </section>
-    </>
+    <div>
+      <h1>My app test pagination</h1>
+      <Posts posts={currentPosts} loading={loading} />
+      <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={posts.length}
+        paginate={paginate}
+      />
+    </div>
   );
 };
 

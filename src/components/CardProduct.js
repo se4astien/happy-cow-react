@@ -1,19 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-export default function CardProduct(props) {
+const CardProduct = ({ posts, loading }) => {
   // ratings
   const stars = [];
   const half = 0.5;
 
   for (let i = half; i < 5; i++) {
-    if (i < props.rating) {
+    if (i < posts.rating) {
       stars.push(
         <li className="yellowgreen">
           <ion-icon key={i} name="star"></ion-icon>
         </li>
       );
-    } else if (i <= props.rating) {
+    } else if (i <= posts.rating) {
       stars.push(
         <li className="yellowgreen">
           <ion-icon key={i} name="star-half"></ion-icon>
@@ -28,29 +28,45 @@ export default function CardProduct(props) {
     }
   }
 
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
+
   return (
-    <div className="card">
-      <div className="card-picture">
-        <Link to={`/card-product-details/${props.placeId}`}>
-          <img src={props.thumbnail} alt={props.name} />
-          <span>
-            <ion-icon name="heart-empty"></ion-icon>
-          </span>
-        </Link>
+    <ul>
+      <div className="card-list full-space">
+        {posts.map(post => (
+          <li key={post.id}>
+            <div className="card">
+              <div className="card-picture">
+                <Link to={`/card-product-details/${post.placeId}`}>
+                  <img src={post.thumbnail} alt={post.name} />
+                  <span>
+                    <ion-icon name="heart-empty"></ion-icon>
+                  </span>
+                </Link>
+              </div>
+              <h3 className="no-margin no-padding ellipsis">
+                <Link to={`/card-product-details/${post.placeId}`}>
+                  {post.name}
+                </Link>
+              </h3>
+              <p className="localisation no-margin">
+                Vendays-montalivet, France
+              </p>
+              <div className="review">
+                <ul>
+                  <li>{stars}</li>
+                </ul>
+                <span>{post.rating} reviews</span>
+              </div>
+              <p className="description no-margin">{post.description}</p>
+            </div>
+          </li>
+        ))}
       </div>
-
-      <h3 className="no-margin no-padding ellipsis">
-        <Link to={`/card-product-details/${props.placeId}`}>{props.name}</Link>
-      </h3>
-
-      <p className="localisation no-margin">Vendays-montalivet, France</p>
-      <div className="review">
-        <ul>
-          <li>{stars}</li>
-        </ul>
-        <span>{props.rating} reviews</span>
-      </div>
-      <p className="description no-margin">{props.description}</p>
-    </div>
+    </ul>
   );
-}
+};
+
+export default CardProduct;
