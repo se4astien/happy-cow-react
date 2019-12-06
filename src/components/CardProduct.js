@@ -1,37 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// import CSS
+import "../css/App.css";
+import "../css/Search.css";
+import "../css/Products.css";
+// import Components
+import Review from "../components/Review";
 
-const CardProduct = ({ posts, loading }) => {
-  // ratings
-  const stars = [];
-  const half = 0.5;
-
-  for (let i = half; i < 5; i++) {
-    if (i < posts.rating) {
-      stars.push(
-        <li className="yellowgreen">
-          <ion-icon key={i} name="star"></ion-icon>
-        </li>
-      );
-    } else if (i <= posts.rating) {
-      stars.push(
-        <li className="yellowgreen">
-          <ion-icon key={i} name="star-half"></ion-icon>
-        </li>
-      );
-    } else {
-      stars.push(
-        <li className="grey">
-          <ion-icon key={i} name="star"></ion-icon>
-        </li>
-      );
-    }
-  }
-
+const CardProduct = ({ posts, loading, stars }) => {
   if (loading) {
     return <h2>Loading...</h2>;
   }
-
   return (
     <ul>
       <div className="card-list full-space">
@@ -54,12 +33,7 @@ const CardProduct = ({ posts, loading }) => {
               <p className="localisation no-margin">
                 Vendays-montalivet, France
               </p>
-              <div className="review">
-                <ul>
-                  <li>{stars}</li>
-                </ul>
-                <span>{post.rating} reviews</span>
-              </div>
+              <Review post={post} />
               <p className="description no-margin">{post.description}</p>
             </div>
           </li>
