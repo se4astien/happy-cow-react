@@ -2,9 +2,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 
 export default function CardProductDetailsHero({ props, rating }) {
-  let { id } = useParams(); // récupère l'ID de l'annonce
-  let { name } = useParams();
-  let { description } = useParams();
+  let { id } = useParams(); // récupère l'ID du restaurant
 
   // ratings
   const stars = [];
@@ -37,7 +35,7 @@ export default function CardProductDetailsHero({ props, rating }) {
         <div className="wrapper">
           <div className="center">
             <div className="infos">
-              <h1>The gallery</h1>
+              <h1>The gallery : {id}</h1>
               <div className="review flex">
                 <ul>
                   <li>{stars}</li>

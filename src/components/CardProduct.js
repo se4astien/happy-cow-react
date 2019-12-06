@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default function CardProduct(props) {
   // ratings
@@ -31,7 +31,7 @@ export default function CardProduct(props) {
   return (
     <div className="card">
       <div className="card-picture">
-        <Link to={"/card-product-details/" + props.placeId}>
+        <Link to={`/card-product-details/${props.placeId}`}>
           <img src={props.thumbnail} alt={props.name} />
           <span>
             <ion-icon name="heart-empty"></ion-icon>
@@ -40,17 +40,7 @@ export default function CardProduct(props) {
       </div>
 
       <h3 className="no-margin no-padding ellipsis">
-        <Link to={"/card-product-details/" + props.placeId}>{props.name}</Link>
-        {/* <Link
-          to={{
-            pathname: "card-product-details" + props.placeId,
-            aboutProps: {
-              name: props.name
-            }
-          }}
-        >
-          {props.name}
-        </Link> */}
+        <Link to={`/card-product-details/${props.placeId}`}>{props.name}</Link>
       </h3>
 
       <p className="localisation no-margin">Vendays-montalivet, France</p>

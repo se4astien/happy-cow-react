@@ -12,7 +12,7 @@ export default function Search() {
           <input
             type="text"
             name="city"
-            value={city} // on force à Paris par défault
+            // value={city}
             placeholder="Search for city, region or zipcode"
           />
           <Link to={"/products-search/" + city}>

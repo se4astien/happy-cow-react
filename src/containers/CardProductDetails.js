@@ -1,11 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 // import axios from "axios";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  useParams
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 // CSS
 import "../css/CardProductDetails.css";
 // Components
@@ -13,27 +8,6 @@ import CardProductDetailsHero from "../components/CardProductDetailsHero";
 import CardProductDetailsMap from "../components/CardProductDetailsMap";
 
 export default function CardProductDetails(props) {
-  let { id } = useParams(); // récupère l'ID de l'annonce
-
-  // const [isLoading, setIsLoading] = useState(true);
-  // const [product, setProduct] = useState({});
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         "https://res.cloudinary.com/lereacteur-apollo/raw/upload/v1575242111/10w-full-stack/Scraping/restaurants.json"
-  //       );
-
-  //       setProduct(response.data);
-  //       setIsLoading(false);
-  //     } catch (error) {
-  //       alert("An error occured");
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
-
   return (
     <section>
       <CardProductDetailsHero /> 
@@ -109,7 +83,6 @@ export default function CardProductDetails(props) {
 
         <CardProductDetailsMap />
       </div>
-      <div>restaurant : {id}</div>
     </section>
   );
 }
