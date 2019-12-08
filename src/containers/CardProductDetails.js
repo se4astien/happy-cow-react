@@ -6,12 +6,13 @@ import "../css/CardProductDetails.css";
 // Components
 import CardProductDetailsHero from "../components/CardProductDetailsHero";
 import CardProductDetailsMap from "../components/CardProductDetailsMap";
+import Comments from "../components/Comments";
 
 export default function CardProductDetails(props) {
   return (
-    <section>
-      <CardProductDetailsHero /> 
-      <div className="wrapper flex">
+    <>
+      <CardProductDetailsHero />
+      <section className="content wrapper flex">
         <div className="details-desc">
           <ul className="full-space">
             <li>
@@ -82,7 +83,11 @@ export default function CardProductDetails(props) {
         </div>
 
         <CardProductDetailsMap />
-      </div>
-    </section>
+      </section>
+
+      <section className="wrapper comments">
+        <Comments />
+      </section>
+    </>
   );
 }
