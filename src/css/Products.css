@@ -22,9 +22,10 @@
   color: #444;
   font-weight: 800;
 }
-.card-list .view-all {
+.card-list .view-all a {
   font-size: 16px;
   font-weight: 800;
+  color: #8d65cc;
 }
 .card-list .card {
   width: 245px;
