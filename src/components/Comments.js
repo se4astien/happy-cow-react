@@ -1,22 +1,43 @@
 import React from "react";
-
+import faker from "faker";
 // import Components
 import CommentDetail from "./CommentDetail";
+import ApprovalCard from "./ApprovalCard";
 
 const Comments = () => {
   return (
-    <div class="ui comments">
-      <h3 class="ui dividing header">Comments</h3>
-      <CommentDetail />
-      <CommentDetail />
-      <CommentDetail />
-      <CommentDetail />
-      <form class="ui reply form">
-        <div class="field">
+    <div className="ui container comments">
+      <h3 className="ui dividing header">Comments</h3>
+      <ApprovalCard>
+        <CommentDetail
+          author="Sam"
+          timeAgo="Today at 2PM"
+          content="I like writing"
+          avatar={faker.image.avatar()}
+        />
+      </ApprovalCard>
+      <ApprovalCard>
+        <CommentDetail
+          author="Alex"
+          timeAgo="Yesterday at 4PM"
+          content="Too cool dure !"
+          avatar={faker.image.avatar()}
+        />
+      </ApprovalCard>
+      <ApprovalCard>
+        <CommentDetail
+          author="Jane"
+          timeAgo="Monday at 1PM"
+          content="Nice blog post"
+          avatar={faker.image.avatar()}
+        />
+      </ApprovalCard>
+      <form className="ui reply form">
+        <div className="field">
           <textarea></textarea>
         </div>
-        <div class="ui blue labeled submit icon button">
-          <i class="icon edit"></i> Add Reply
+        <div className="ui blue labeled submit icon button">
+          <i className="icon edit"></i> Add Reply
         </div>
       </form>
     </div>
