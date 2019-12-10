@@ -16,16 +16,16 @@ export default function ProductsSearchfilter() {
   const [loading, setLoading] = useState(false);
 
   // parcourir fichier JSON
-  const name = [];
+  const productsName = [];
   for (let key in restaurants) {
     if (restaurants.hasOwnProperty(key)) {
       // on push dans le tableau 'name' le name du JSON
-      name.push(restaurants[key].name);
+      productsName.push(restaurants[key].name);
     }
   }
-  // console.log(name); // name du tableau restaurants
+  // console.log(productsName); // productsName du tableau restaurants
 
-  let count = name.length; // permet de compter le nomdre d'objet dans le tableau
+  let count = productsName.length; // permet de compter le nomdre d'objet dans le tableau
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,7 +45,7 @@ export default function ProductsSearchfilter() {
     setSearchTerm(event.target.value);
   };
   useEffect(() => {
-    const results = name.filter(result =>
+    const results = productsName.filter(result =>
       result.toLowerCase().includes(searchTerm)
     );
     setSearchResults(results);
@@ -59,7 +59,7 @@ export default function ProductsSearchfilter() {
       <section className="container border-top">
         <div className="flexOne">
           <div className="search-filter">
-            <div className="">
+            <div className="count flex">
               We found {count} results for {city}
             </div>
             <div className="form">
@@ -69,16 +69,19 @@ export default function ProductsSearchfilter() {
                 value={searchTerm}
                 onChange={handleChange}
               />
+              <button type="submit">
+                <ion-icon name="search"></ion-icon>
+              </button>
               {searchTerm && searchTerm ? (
-                <ul>
+                <ul className="display column">
                   {searchResults.map((item, index) => (
                     <li key={index}>{item}</li>
                   ))}
                 </ul>
               ) : (
-                <ul className="column">
-                  {name.map((nameItem, index) => (
-                    <li key={index}>{nameItem}</li>
+                <ul className="display column">
+                  {productsName.map((item, index) => (
+                    <li key={index}>{item}</li>
                   ))}
                 </ul>
               )}
