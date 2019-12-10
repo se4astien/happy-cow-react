@@ -1,25 +1,35 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React, { useState, useEffect } from "react";
 
-const people = [
-  "Siri",
-  "Alexa",
-  "Google",
-  "Facebook",
-  "Twitter",
-  "Linkedin",
-  "Sinkedin"
-];
+export default function SearchTest({ products }) {
+  //   products = [
+  //     "Siri",
+  //     "Alexa",
+  //     "Google",
+  //     "Facebook",
+  //     "Twitter",
+  //     "Linkedin",
+  //     "Sinkedin"
+  //   ];
 
-function App() {
-  const [searchTerm, setSearchTerm] = React.useState("");
-  const [searchResults, setSearchResults] = React.useState([]);
+  // console.log(products); // {...}
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
   const handleChange = event => {
     setSearchTerm(event.target.value);
   };
-  React.useEffect(() => {
-    const results = people.filter(person =>
-      person.toLowerCase().includes(searchTerm)
+
+  let resultName = "";
+  for (let key in products) {
+    if (products.hasOwnProperty(key)) {
+      resultName = products[key].name;
+      console.log(resultName); // name du tableau products
+    }
+  }
+
+  useEffect(() => {
+    const results = products.filter(product =>
+      product.toLowerCase().includes(searchTerm)
     );
     setSearchResults(results);
   }, [searchTerm]);

@@ -14,10 +14,6 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // pagination
-  const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage] = useState(40);
-
   // on met l'url du json dans une variable
   const api =
     "https://res.cloudinary.com/lereacteur-apollo/raw/upload/v1575242111/10w-full-stack/Scraping/restaurants.json";
@@ -31,6 +27,10 @@ const Products = () => {
     };
     fetchData();
   }, []); // pour éviter une boucle infinie au chargement du composant
+
+  // pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage] = useState(40);
 
   // Get current products
   const indexOfLastPost = currentPage * productsPerPage;

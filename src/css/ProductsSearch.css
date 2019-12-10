@@ -1,0 +1,20 @@
+.border-top {
+  border-top: 4px solid #7c4dc4;
+  margin-top: 10px;
+}
+.flexOne {
+  display: flex;
+}
+
+.search-filter,
+.search-filter-map {
+  flex: 1;
+}
+
+.search-filter .form ul {
+  flex-direction: column;
+}
+
+.search-filter-map #map {
+  height: 800px;
+}
