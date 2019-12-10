@@ -11,6 +11,10 @@
   flex: 1;
 }
 
+.search-filter .form {
+  height: 780px;
+  overflow: hidden;
+}
 .search-filter .form ul {
   flex-direction: column;
 }

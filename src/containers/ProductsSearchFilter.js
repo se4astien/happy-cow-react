@@ -96,13 +96,16 @@ export default function ProductsSearchfilter() {
                 value={searchTerm}
                 onChange={handleChange}
               />
+
               <ul>
                 {searchResults.map(item => (
                   <li>{item}</li>
                 ))}
               </ul>
               <ul className="column">
-                <li>{name}</li>
+                {name.map(nameItem => (
+                  <li>{nameItem}</li>
+                ))}
               </ul>
             </div>
           </div>
