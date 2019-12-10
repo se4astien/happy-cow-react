@@ -27,15 +27,11 @@ export default function ProductsSearchfilter() {
   const [restaurants, setRestaurants] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // on met l'url du json dans une variable
-  const api =
-    "https://res.cloudinary.com/lereacteur-apollo/raw/upload/v1575242111/10w-full-stack/Scraping/restaurants.json";
-
   // parcourir fichier JSON
   const name = [];
-
   for (let key in restaurants) {
     if (restaurants.hasOwnProperty(key)) {
+      // on push dans le tableau 'name' le name du JSON
       name.push(restaurants[key].name);
     }
   }
@@ -44,14 +40,14 @@ export default function ProductsSearchfilter() {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const res = await axios.get(api);
+      const res = await axios.get(
+        "https://res.cloudinary.com/lereacteur-apollo/raw/upload/v1575242111/10w-full-stack/Scraping/restaurants.json"
+      );
       setRestaurants(res.data);
       setLoading(false);
     };
     fetchData();
   }, []); // pour éviter une boucle infinie au chargement du composant
-
-  // en gros, ce que je récupère dans ma boucle, je dois le pusher dans un tableau
 
   // filters
   const [searchTerm, setSearchTerm] = useState("");
@@ -104,6 +100,9 @@ export default function ProductsSearchfilter() {
                 {searchResults.map(item => (
                   <li>{item}</li>
                 ))}
+              </ul>
+              <ul className="column">
+                <li>{name}</li>
               </ul>
             </div>
           </div>
