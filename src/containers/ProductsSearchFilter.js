@@ -12,7 +12,7 @@ const api =
 export default function ProductsSearchfilter() {
   let { city } = useParams(); // paramètre récupéré via la route dans App
 
-  const [restaurants, setRestaurants] = useState("");
+  const [restaurants, setRestaurants] = useState({});
   const [loading, setLoading] = useState(false);
 
   // parcourir fichier JSON
@@ -72,19 +72,21 @@ export default function ProductsSearchfilter() {
               <button type="submit">
                 <ion-icon name="search"></ion-icon>
               </button>
-              {searchTerm && searchTerm ? (
-                <ul className="display column">
-                  {searchResults.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              ) : (
-                <ul className="display column">
-                  {productsName.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              )}
+              <div className="display-results">
+                {searchTerm && searchTerm ? (
+                  <ul className="display column">
+                    {searchResults.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <ul className="display column">
+                    {productsName.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </div>
           </div>
           <ProductsSearchFilterMap />
