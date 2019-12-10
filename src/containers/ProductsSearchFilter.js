@@ -65,7 +65,7 @@ export default function ProductsSearchfilter() {
             <div className="form">
               <input
                 type="text"
-                placeholder="Search"
+                placeholder="Search by name"
                 value={searchTerm}
                 onChange={handleChange}
               />
