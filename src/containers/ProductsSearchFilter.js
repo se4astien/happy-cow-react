@@ -1,30 +1,18 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import L from "leaflet";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  useParams
-} from "react-router-dom";
+import { useParams } from "react-router-dom";
+// Components
+import ProductsSearchFilterMap from "../components/ProductsSearchFilterMap";
 // CSS
 import "../css/ProductsSearch.css";
 
-// test
-// const name = [
-//   "Siri",
-//   "Alexa",
-//   "Google",
-//   "Facebook",
-//   "Twitter",
-//   "Linkedin",
-//   "Sinkedin"
-// ];
+const api =
+  "https://res.cloudinary.com/lereacteur-apollo/raw/upload/v1575242111/10w-full-stack/Scraping/restaurants.json";
 
 export default function ProductsSearchfilter() {
   let { city } = useParams(); // paramètre récupéré via la route dans App
 
-  const [restaurants, setRestaurants] = useState([]);
+  const [restaurants, setRestaurants] = useState("");
   const [loading, setLoading] = useState(false);
 
   // parcourir fichier JSON
@@ -35,14 +23,14 @@ export default function ProductsSearchfilter() {
       name.push(restaurants[key].name);
     }
   }
-  console.log(name); // name du tableau restaurants
+  // console.log(name); // name du tableau restaurants
+
+  let count = name.length; // permet de compter le nomdre d'objet dans le tableau
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const res = await axios.get(
-        "https://res.cloudinary.com/lereacteur-apollo/raw/upload/v1575242111/10w-full-stack/Scraping/restaurants.json"
-      );
+      const res = await axios.get(api);
       setRestaurants(res.data);
       setLoading(false);
     };
@@ -52,6 +40,7 @@ export default function ProductsSearchfilter() {
   // filters
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+
   const handleChange = event => {
     setSearchTerm(event.target.value);
   };
@@ -62,33 +51,17 @@ export default function ProductsSearchfilter() {
     setSearchResults(results);
   }, [searchTerm]);
 
-  // create map
-  const mapRef = useRef(null);
-  useEffect(() => {
-    mapRef.current = L.map("map", {
-      center: [49.8419, 24.0315],
-      zoom: 16,
-      layers: [
-        L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
-          attribution:
-            '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        })
-      ]
-    });
-  }, []);
-
-  // add layer map
-  const layerRef = useRef(null);
-  useEffect(() => {
-    layerRef.current = L.layerGroup().addTo(mapRef.current);
-  }, []);
-
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
   return (
     <>
       <section className="container border-top">
         <div className="flexOne">
           <div className="search-filter">
-            <div className="">We found 932 results for {city}</div>
+            <div className="">
+              We found {count} results for {city}
+            </div>
             <div className="form">
               <input
                 type="text"
@@ -96,22 +69,22 @@ export default function ProductsSearchfilter() {
                 value={searchTerm}
                 onChange={handleChange}
               />
-
-              <ul>
-                {searchResults.map(item => (
-                  <li>{item}</li>
-                ))}
-              </ul>
-              <ul className="column">
-                {name.map(nameItem => (
-                  <li>{nameItem}</li>
-                ))}
-              </ul>
+              {searchTerm && searchTerm ? (
+                <ul>
+                  {searchResults.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              ) : (
+                <ul className="column">
+                  {name.map((nameItem, index) => (
+                    <li key={index}>{nameItem}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
-          <div className="search-filter-map">
-            <div id="map"></div>
-          </div>
+          <ProductsSearchFilterMap />
         </div>
       </section>
     </>

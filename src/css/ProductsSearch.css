@@ -13,7 +13,7 @@
 
 .search-filter .form {
   height: 780px;
-  overflow: hidden;
+  overflow: auto;
 }
 .search-filter .form ul {
   flex-direction: column;

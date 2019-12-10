@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 
-export default function SearchTest({ products }) {
-  //   products = [
-  //     "Siri",
-  //     "Alexa",
-  //     "Google",
-  //     "Facebook",
-  //     "Twitter",
-  //     "Linkedin",
-  //     "Sinkedin"
-  //   ];
+export default function SearchTest() {
+  const products = [
+    "Siri",
+    "Alexa",
+    "Google",
+    "Facebook",
+    "Twitter",
+    "Linkedin",
+    "Sinkedin"
+  ];
 
   // console.log(products); // {...}
 
