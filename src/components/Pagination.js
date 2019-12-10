@@ -1,9 +1,13 @@
 import React from "react";
 
-export default function Pagination({ postsPerPage, totalPosts, paginate }) {
+export default function Pagination({
+  productsPerPage,
+  totalProducts,
+  paginate
+}) {
   const pageNumbers = [];
 
-  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(totalProducts / productsPerPage); i++) {
     pageNumbers.push(i);
   }
 

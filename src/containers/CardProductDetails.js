@@ -7,6 +7,7 @@ import "../css/CardProductDetails.css";
 import CardProductDetailsHero from "../components/CardProductDetailsHero";
 import CardProductDetailsMap from "../components/CardProductDetailsMap";
 import Comments from "../components/Comments";
+import SearchTest from "../components/SearchTest";
 
 export default function CardProductDetails(props) {
   return (

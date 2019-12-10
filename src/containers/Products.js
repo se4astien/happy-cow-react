@@ -10,37 +10,42 @@ import Search from "../components/Search";
 import CardProduct from "../components/CardProduct";
 import Pagination from "../components/Pagination";
 
-const ProductsTest = () => {
-  const [posts, setPosts] = useState([]);
+const Products = () => {
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  // pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(40);
+  const [productsPerPage] = useState(40);
+
+  // on met l'url du json dans une variable
+  const api =
+    "https://res.cloudinary.com/lereacteur-apollo/raw/upload/v1575242111/10w-full-stack/Scraping/restaurants.json";
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchData = async () => {
       setLoading(true);
-      const res = await axios.get(
-        "https://res.cloudinary.com/lereacteur-apollo/raw/upload/v1575242111/10w-full-stack/Scraping/restaurants.json"
-      );
-      setPosts(res.data);
+      const res = await axios.get(api);
+      setProducts(res.data);
       setLoading(false);
     };
-    fetchProducts();
+    fetchData();
   }, []); // pour éviter une boucle infinie au chargement du composant
 
-  // console.log(posts);
-
-  // Get current posts
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  // Get current products
+  const indexOfLastPost = currentPage * productsPerPage;
+  const indexOfFirstPost = indexOfLastPost - productsPerPage;
+  const currentProducts = products.slice(indexOfFirstPost, indexOfLastPost);
 
   // Change page
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   return (
     <>
-      <Search />
+      <section className="search">
+        <Search />
+      </section>
+
       <section className="wrapper">
         <div className="card-list center">
           <h2>Vegan Food Near Me</h2>
@@ -48,10 +53,10 @@ const ProductsTest = () => {
             <Link to="#">View all ></Link>
           </div>
         </div>
-        <CardProduct posts={currentPosts} loading={loading} />
+        <CardProduct products={currentProducts} loading={loading} />
         <Pagination
-          postsPerPage={postsPerPage}
-          totalPosts={posts.length}
+          productsPerPage={productsPerPage}
+          totalProducts={products.length}
           paginate={paginate}
         />
       </section>
@@ -59,4 +64,4 @@ const ProductsTest = () => {
   );
 };
 
-export default ProductsTest;
+export default Products;

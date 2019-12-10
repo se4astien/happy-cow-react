@@ -8,7 +8,7 @@ export default function Search() {
     <section className="search">
       <div className="wrapper center column">
         <h1>Find Vegan Restaurants Nearby</h1>
-        <form>
+        <div className="form">
           <input
             type="text"
             name="city"
@@ -20,7 +20,7 @@ export default function Search() {
               <ion-icon name="search"></ion-icon>
             </button>
           </Link>
-        </form>
+        </div>
       </div>
       <div className="svg">
         <svg
