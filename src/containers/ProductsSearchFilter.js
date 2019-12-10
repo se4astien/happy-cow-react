@@ -11,15 +11,15 @@ import {
 import "../css/ProductsSearch.css";
 
 // test
-const name = [
-  "Siri",
-  "Alexa",
-  "Google",
-  "Facebook",
-  "Twitter",
-  "Linkedin",
-  "Sinkedin"
-];
+// const name = [
+//   "Siri",
+//   "Alexa",
+//   "Google",
+//   "Facebook",
+//   "Twitter",
+//   "Linkedin",
+//   "Sinkedin"
+// ];
 
 export default function ProductsSearchfilter() {
   let { city } = useParams(); // paramètre récupéré via la route dans App
@@ -31,6 +31,16 @@ export default function ProductsSearchfilter() {
   const api =
     "https://res.cloudinary.com/lereacteur-apollo/raw/upload/v1575242111/10w-full-stack/Scraping/restaurants.json";
 
+  // parcourir fichier JSON
+  const name = [];
+
+  for (let key in restaurants) {
+    if (restaurants.hasOwnProperty(key)) {
+      name.push(restaurants[key].name);
+    }
+  }
+  console.log(name); // name du tableau restaurants
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -41,14 +51,7 @@ export default function ProductsSearchfilter() {
     fetchData();
   }, []); // pour éviter une boucle infinie au chargement du composant
 
-  // test v2 => parcourir fichier JSON
-  let resultSearchName = "";
-  for (let key in restaurants) {
-    if (restaurants.hasOwnProperty(key)) {
-      resultSearchName = restaurants[key].name;
-      console.log(resultSearchName); // name du tableau restaurants
-    }
-  }
+  // en gros, ce que je récupère dans ma boucle, je dois le pusher dans un tableau
 
   // filters
   const [searchTerm, setSearchTerm] = useState("");
