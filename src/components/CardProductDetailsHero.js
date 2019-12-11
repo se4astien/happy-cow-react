@@ -12,13 +12,13 @@ export default function CardProductDetailsHero() {
   const half = 0.5;
 
   for (let i = half; i < 5; i++) {
-    if (i < 5) {
+    if (i < location.state.rating) {
       stars.push(
         <li className="yellowgreen">
           <ion-icon key={i} name="star"></ion-icon>
         </li>
       );
-    } else if (i <= 5) {
+    } else if (i <= location.state.rating) {
       stars.push(
         <li className="yellowgreen">
           <ion-icon key={i} name="star-half"></ion-icon>

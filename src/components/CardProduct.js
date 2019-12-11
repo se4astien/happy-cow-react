@@ -26,6 +26,7 @@ const CardProduct = ({ products, loading }) => {
                     address: product.address,
                     phone: product.phone,
                     picture: product.pictures,
+                    rating: product.rating,
                     location: {
                       lng: product.location.lng,
                       lat: product.location.lat

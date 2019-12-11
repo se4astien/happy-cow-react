@@ -71,6 +71,9 @@ export default function CardProductDetails() {
               <img src={location.state.picture[0]} alt="#" />
               <img src={location.state.picture[1]} alt="#" />
               <img src={location.state.picture[2]} alt="#" />
+              <img src={location.state.picture[3]} alt="#" />
+              <img src={location.state.picture[4]} alt="#" />
+              <img src={location.state.picture[5]} alt="#" />
             </div>
           </div>
         </div>

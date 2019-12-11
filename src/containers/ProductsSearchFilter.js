@@ -15,6 +15,8 @@ export default function ProductsSearchfilter() {
   const [restaurants, setRestaurants] = useState({});
   const [loading, setLoading] = useState(false);
 
+  console.log(restaurants.address);
+
   // parcourir fichier JSON
   const productsName = [];
   for (let key in restaurants) {
