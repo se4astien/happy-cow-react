@@ -79,20 +79,24 @@ export default function ProductsSearchfilter() {
             </button>
             <div className="display-results">
               {searchTerm && searchTerm ? (
-                <ul>
+                <ul className="search-filter-results">
                   {searchResults.map((item, index) => (
                     <li key={index}>
-                      {item.name}
                       <img src={item.picture} />
+                      <div>
+                        <p>{item.name}</p>
+                      </div>
                     </li>
                   ))}
                 </ul>
               ) : (
-                <ul className="display column">
+                <ul className="search-filter-results">
                   {tab.map((item, index) => (
                     <li key={index}>
-                      {item.name}
                       <img src={item.picture} />
+                      <div>
+                        <p>{item.name}</p>
+                      </div>
                     </li>
                   ))}
                 </ul>

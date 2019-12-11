@@ -51,15 +51,34 @@
   cursor: pointer;
 }
 
-.search-filter .form ul.display {
-  flex-direction: column;
-  padding: 10px 20px;
+.search-filter .search-filter-results {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
 }
-.search-filter .form ul.display li {
+.search-filter .search-filter-results li {
   color: #444;
   text-transform: uppercase;
-  padding: 5px 0;
+  font-size: 10px;
+  font-weight: bold;
+  width: 200px;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 8px 20px 8px;
+  border: 1px solid #ccc;
 }
+.search-filter .search-filter-results li img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+}
+.search-filter .search-filter-results li > div {
+  height: 50px;
+}
+.search-filter .search-filter-results li > div p {
+  padding-top: 10px;
+}
+
 .search-filter-map #map {
   height: 800px;
 }
