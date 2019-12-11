@@ -17,7 +17,22 @@ const CardProduct = ({ products, loading }) => {
         <li key={product.id}>
           <div className="card">
             <div className="card-picture">
-              <Link to={`/card-product-details/${product.placeId}`}>
+              <Link
+                to={{
+                  pathname: `/card-product-details/${product.placeId}`,
+                  state: {
+                    name: product.name,
+                    description: product.description,
+                    address: product.address,
+                    phone: product.phone,
+                    picture: product.pictures,
+                    location: {
+                      lng: product.location.lng,
+                      lat: product.location.lat
+                    }
+                  }
+                }}
+              >
                 <img src={product.thumbnail} alt={product.name} />
                 <span>
                   <ion-icon name="heart-empty"></ion-icon>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router";
 // import axios from "axios";
 import { Link } from "react-router-dom";
 // CSS
@@ -8,7 +9,9 @@ import CardProductDetailsHero from "../components/CardProductDetailsHero";
 import CardProductDetailsMap from "../components/CardProductDetailsMap";
 import Comments from "../components/Comments";
 
-export default function CardProductDetails(props) {
+export default function CardProductDetails() {
+  let location = useLocation();
+  // console.log(location);
   return (
     <>
       <CardProductDetailsHero />
@@ -26,25 +29,20 @@ export default function CardProductDetails(props) {
               <i className="material-icons green">phone</i>
               <div className="rub column">
                 <span className="title">Contact</span>
-                <span className="desc">+33-622098695</span>
+                <span className="desc">{location.state.phone}</span>
               </div>
             </li>
             <li>
               <i className="material-icons green">where_to_vote</i>
               <div className="rub column">
                 <span className="title">Find</span>
-                <span className="desc">
-                  49 Ave Brémontier, Vendays-montalivet, France, 33930
-                </span>
+                <span className="desc">{location.state.address}</span>
               </div>
             </li>
           </ul>
 
           <div className="description">
-            <p className="desc">
-              Surf restaurant serving smoothies and organic dishes. Open daily,
-              hours may vary. Use of eggs reported in Aug 2019.
-            </p>
+            <p className="desc">{location.state.description}</p>
             <p className="cat">
               Categories: Ovo, Organic, Mediterranean, Beer/Wine, Take-out,
               Mexican, European, French, Fusion, Gluten-free
@@ -70,14 +68,9 @@ export default function CardProductDetails(props) {
 
           <div className="listing-images flex">
             <div>
-              <img
-                src="https://images.happycow.net/venues/500/17/38/hcmp173847_668236.jpeg"
-                alt="#"
-              />
-              <img
-                src="https://images.happycow.net/venues/500/17/38/hcmp173847_668236.jpeg"
-                alt="#"
-              />
+              <img src={location.state.picture[0]} alt="#" />
+              <img src={location.state.picture[1]} alt="#" />
+              <img src={location.state.picture[2]} alt="#" />
             </div>
           </div>
         </div>

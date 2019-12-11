@@ -1,8 +1,11 @@
 import React from "react";
+import { useLocation } from "react-router";
 import { Link, useParams } from "react-router-dom";
 
-export default function CardProductDetailsHero({ props, rating }) {
+export default function CardProductDetailsHero() {
   let { id } = useParams(); // récupère l'ID du restaurant
+  let location = useLocation();
+  // console.log(location);
 
   // ratings
   const stars = [];
@@ -34,7 +37,9 @@ export default function CardProductDetailsHero({ props, rating }) {
       <div className="wrapper">
         <div className="center">
           <div className="infos">
-            <h1>The gallery : {id}</h1>
+            <h1>
+              {location.state.name} : {id}
+            </h1>
             <div className="review flex">
               <ul>
                 <li>{stars}</li>

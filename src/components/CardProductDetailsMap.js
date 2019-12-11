@@ -1,13 +1,27 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { useLocation } from "react-router";
 import L from "leaflet";
 
-function CardProductDetailsMap({ markersData }) {
+function CardProductDetailsMap() {
+  let location = useLocation();
+  console.log(location);
+  // coordonnées du marker
+  const [markersData, setMarkersData] = useState([
+    {
+      latLng: {
+        lat: location.state.location.lat,
+        lng: location.state.location.lng
+      },
+      title: 1
+    }
+  ]);
+
   // create map
   const mapRef = useRef(null);
   useEffect(() => {
     mapRef.current = L.map("map", {
-      center: [49.8419, 24.0315],
-      zoom: 16,
+      center: [location.state.location.lat, location.state.location.lng],
+      zoom: 14,
       layers: [
         L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
           attribution:
@@ -22,6 +36,14 @@ function CardProductDetailsMap({ markersData }) {
   useEffect(() => {
     layerRef.current = L.layerGroup().addTo(mapRef.current);
   }, []);
+
+  // update markers
+  useEffect(() => {
+    layerRef.current.clearLayers();
+    markersData.forEach(marker => {
+      L.marker(marker.latLng, { title: marker.title }).addTo(layerRef.current);
+    });
+  }, [markersData]);
 
   return (
     <>
