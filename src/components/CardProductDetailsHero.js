@@ -1,11 +1,9 @@
 import React from "react";
 import { useLocation } from "react-router";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function CardProductDetailsHero() {
-  let { id } = useParams(); // récupère l'ID du restaurant
-  let location = useLocation();
-  // console.log(location);
+  let location = useLocation(); // récupère les data envoyés via Link 'CardProduct.js'
 
   // ratings
   const stars = [];
@@ -14,13 +12,13 @@ export default function CardProductDetailsHero() {
   for (let i = half; i < 5; i++) {
     if (i < location.state.rating) {
       stars.push(
-        <li className="yellowgreen">
+        <li className="purple">
           <ion-icon key={i} name="star"></ion-icon>
         </li>
       );
     } else if (i <= location.state.rating) {
       stars.push(
-        <li className="yellowgreen">
+        <li className="purple">
           <ion-icon key={i} name="star-half"></ion-icon>
         </li>
       );
@@ -37,14 +35,11 @@ export default function CardProductDetailsHero() {
       <div className="wrapper">
         <div className="center">
           <div className="infos">
-            <h1>
-              {location.state.name} : {id}
-            </h1>
+            <h1>{location.state.name}</h1>
             <div className="review flex">
               <ul>
                 <li>{stars}</li>
               </ul>
-              <span>{location.state.rating} ratings </span>
             </div>
           </div>
 

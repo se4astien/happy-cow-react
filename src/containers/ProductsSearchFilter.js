@@ -7,7 +7,7 @@ import ProductsSearchFilterMap from "../components/ProductsSearchFilterMap";
 import "../css/ProductsSearch.css";
 
 export default function ProductsSearchfilter() {
-  // paramètre récupéré via la route dans App
+  // paramètre récupéré via <Route path="/products-search/:city"> dans App
   let { city } = useParams();
 
   /////////////////////
@@ -25,79 +25,83 @@ export default function ProductsSearchfilter() {
       const res = await axios.get(api);
       setProducts(res.data);
       setLoading(false);
+      // on va créer un tableau vide
       const newTab = [];
+      // on boucle sur res.data
       for (let i = 0; i < res.data.length; i++) {
+        // on push dans newTab le name et l'image
         newTab.push({ name: res.data[i].name, picture: res.data[i].thumbnail });
       }
       setNewTab(newTab);
       // console.log(newTab);
     };
     fetchData();
-  }, []); // pour éviter une boucle infinie au chargement du composant
+  }, []); // permet d'arrêter le chargement du composant
   /////////////////////
 
   ////////FILTER///////
-
-  // console.log(newTab);
-
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const handleChange = event => {
     setSearchTerm(event.target.value);
   };
   useEffect(() => {
-    //console.log(newTab);
     const results = newTab.filter(item =>
       item.name.toLowerCase().includes(searchTerm)
     );
-    console.log(results); // tableau vide
+    console.log(results);
     setSearchResults(results);
-  }, [searchTerm]);
-
+  }, [searchTerm]); // composant qui se recharge à chaque lettre tapé par l'utilisateur
   /////////////////////
 
+  let count = products.length;
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
   return (
-    <>
-      <section className="container border-top">
-        <div className="flexOne">
-          <div className="search-filter">
-            <div className="count flex">We found 924 results for {city}</div>
-            <div className="form">
-              <input
-                type="text"
-                placeholder="Search"
-                value={searchTerm}
-                onChange={handleChange}
-              />
-              <button type="submit">
-                <ion-icon name="search"></ion-icon>
-              </button>
-              <div className="display-results">
-                {searchTerm && searchTerm ? (
-                  <ul>
-                    {searchResults.map((item, index) => (
-                      <li key={index}>
-                        {item.name}
-                        <img src={item.picture} />
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <ul className="display column">
-                    {newTab.map((item, index) => (
-                      <li key={index}>
-                        {item.name}
-                        <img src={item.picture} />
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
+    <section className="container border-top">
+      <div className="flexOne">
+        <div className="search-filter">
+          <div className="count flex">
+            We found {count} results for {city}
+          </div>
+          <div className="form">
+            <input
+              type="text"
+              placeholder="Search"
+              value={searchTerm}
+              onChange={handleChange}
+            />
+            <button type="submit">
+              <ion-icon name="search"></ion-icon>
+            </button>
+            <div className="display-results">
+              {searchTerm && searchTerm ? (
+                <ul>
+                  {searchResults.map((item, index) => (
+                    <li key={index}>
+                      {item.name}
+                      <img src={item.picture} />
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <ul className="display column">
+                  {newTab.map((item, index) => (
+                    <li key={index}>
+                      {item.name}
+                      <img src={item.picture} />
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
-          <ProductsSearchFilterMap />
         </div>
-      </section>
-    </>
+        <ProductsSearchFilterMap />
+      </div>
+    </section>
   );
 }
