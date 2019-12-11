@@ -6,70 +6,66 @@ import ProductsSearchFilterMap from "../components/ProductsSearchFilterMap";
 // CSS
 import "../css/ProductsSearch.css";
 
-const api =
-  "https://res.cloudinary.com/lereacteur-apollo/raw/upload/v1575242111/10w-full-stack/Scraping/restaurants.json";
-
 export default function ProductsSearchfilter() {
-  let { city } = useParams(); // paramètre récupéré via la route dans App
+  // paramètre récupéré via la route dans App
+  let { city } = useParams();
 
-  const [restaurants, setRestaurants] = useState({});
+  /////////////////////
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [newTab, setNewTab] = useState([]);
 
-  //console.log(restaurants.address);
-
-  // parcourir fichier JSON
-  const productsName = [];
-  for (let key in restaurants) {
-    if (restaurants.hasOwnProperty(key)) {
-      // on push dans le tableau 'name' le name du JSON
-      productsName.push(restaurants[key].name);
-    }
-  }
-  // console.log(productsName); // productsName du tableau restaurants
-
-  let count = productsName.length; // permet de compter le nomdre d'objet dans le tableau
+  // on met l'url du json dans une variable
+  const api =
+    "https://res.cloudinary.com/lereacteur-apollo/raw/upload/v1575242111/10w-full-stack/Scraping/restaurants.json";
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       const res = await axios.get(api);
-      setRestaurants(res.data);
+      setProducts(res.data);
       setLoading(false);
+      const newTab = [];
+      for (let i = 0; i < res.data.length; i++) {
+        newTab.push({ name: res.data[i].name, picture: res.data[i].thumbnail });
+      }
+      setNewTab(newTab);
+      // console.log(newTab);
     };
     fetchData();
   }, []); // pour éviter une boucle infinie au chargement du composant
+  /////////////////////
 
-  console.log(restaurants);
+  ////////FILTER///////
 
-  // filters
+  // console.log(newTab);
+
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-
   const handleChange = event => {
     setSearchTerm(event.target.value);
   };
   useEffect(() => {
-    const results = productsName.filter(result =>
-      result.toLowerCase().includes(searchTerm)
+    //console.log(newTab);
+    const results = newTab.filter(item =>
+      item.name.toLowerCase().includes(searchTerm)
     );
+    console.log(results); // tableau vide
     setSearchResults(results);
   }, [searchTerm]);
 
-  if (loading) {
-    return <h2>Loading...</h2>;
-  }
+  /////////////////////
+
   return (
     <>
       <section className="container border-top">
         <div className="flexOne">
           <div className="search-filter">
-            <div className="count flex">
-              We found {count} results for {city}
-            </div>
+            <div className="count flex">We found 924 results for {city}</div>
             <div className="form">
               <input
                 type="text"
-                placeholder="Search by name"
+                placeholder="Search"
                 value={searchTerm}
                 onChange={handleChange}
               />
@@ -78,15 +74,21 @@ export default function ProductsSearchfilter() {
               </button>
               <div className="display-results">
                 {searchTerm && searchTerm ? (
-                  <ul className="display column">
+                  <ul>
                     {searchResults.map((item, index) => (
-                      <li key={index}>{item}</li>
+                      <li key={index}>
+                        {item.name}
+                        <img src={item.picture} />
+                      </li>
                     ))}
                   </ul>
                 ) : (
                   <ul className="display column">
-                    {productsName.map((item, index) => (
-                      <li key={index}>{item}</li>
+                    {newTab.map((item, index) => (
+                      <li key={index}>
+                        {item.name}
+                        <img src={item.picture} />
+                      </li>
                     ))}
                   </ul>
                 )}
