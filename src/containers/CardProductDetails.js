@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router";
-// import axios from "axios";
-import { Link } from "react-router-dom";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
 // CSS
 import "../css/CardProductDetails.css";
 // Components
@@ -11,7 +11,8 @@ import Comments from "../components/Comments";
 
 export default function CardProductDetails() {
   let location = useLocation();
-  // console.log(location);
+  const handleOnDragStart = e => e.preventDefault();
+
   return (
     <>
       <CardProductDetailsHero />
@@ -49,7 +50,7 @@ export default function CardProductDetails() {
             </p>
           </div>
 
-          <div className="actions">
+          {/* <div className="actions">
             <ul>
               <li>
                 <Link to="#" className="btn btn-purple">
@@ -64,9 +65,25 @@ export default function CardProductDetails() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           <div className="listing-images flex">
+            <AliceCarousel mouseTrackingEnabled>
+              {location.state.pictures.map((item, index) => {
+                return (
+                  <li key={index}>
+                    <img
+                      src={item}
+                      onDragStart={handleOnDragStart}
+                      className="yours-custom-class"
+                    />
+                  </li>
+                );
+              })}
+            </AliceCarousel>
+          </div>
+
+          {/* <div className="listing-images flex">
             <div>
               <img src={location.state.picture[0]} alt="#" />
               <img src={location.state.picture[1]} alt="#" />
@@ -75,7 +92,7 @@ export default function CardProductDetails() {
               <img src={location.state.picture[4]} alt="#" />
               <img src={location.state.picture[5]} alt="#" />
             </div>
-          </div>
+          </div> */}
         </div>
 
         <CardProductDetailsMap />

@@ -15,7 +15,7 @@ export default function ProductsSearchfilter() {
   const [restaurants, setRestaurants] = useState({});
   const [loading, setLoading] = useState(false);
 
-  console.log(restaurants.address);
+  //console.log(restaurants.address);
 
   // parcourir fichier JSON
   const productsName = [];
@@ -38,6 +38,8 @@ export default function ProductsSearchfilter() {
     };
     fetchData();
   }, []); // pour éviter une boucle infinie au chargement du composant
+
+  console.log(restaurants);
 
   // filters
   const [searchTerm, setSearchTerm] = useState("");
