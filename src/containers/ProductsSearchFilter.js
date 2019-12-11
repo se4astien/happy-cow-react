@@ -13,27 +13,26 @@ export default function ProductsSearchfilter() {
   /////////////////////
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [newTab, setNewTab] = useState([]);
-
-  // on met l'url du json dans une variable
-  const api =
-    "https://res.cloudinary.com/lereacteur-apollo/raw/upload/v1575242111/10w-full-stack/Scraping/restaurants.json";
+  const [tab, setTab] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const res = await axios.get(api);
+      const res = await axios.get(
+        "https://res.cloudinary.com/lereacteur-apollo/raw/upload/v1575242111/10w-full-stack/Scraping/restaurants.json"
+      );
       setProducts(res.data);
       setLoading(false);
-      // on va créer un tableau vide
-      const newTab = [];
+
+      // 2. Pour comparer les résultats de la recheche, on créer un tableau pour insérer les elmts à afficher
+      const tab = [];
       // on boucle sur res.data
       for (let i = 0; i < res.data.length; i++) {
-        // on push dans newTab le name et l'image
-        newTab.push({ name: res.data[i].name, picture: res.data[i].thumbnail });
+        // On créer un objet avec une clé 'name' et 'picture' qu'on push dans tab
+        tab.push({ name: res.data[i].name, picture: res.data[i].thumbnail });
       }
-      setNewTab(newTab);
-      // console.log(newTab);
+      setTab(tab);
+      // console.log(tab);
     };
     fetchData();
   }, []); // permet d'arrêter le chargement du composant
@@ -46,7 +45,8 @@ export default function ProductsSearchfilter() {
     setSearchTerm(event.target.value);
   };
   useEffect(() => {
-    const results = newTab.filter(item =>
+    // 1. Afin de faire une recherche, on doit filtrer des éléments d'un tableau.
+    const results = tab.filter(item =>
       item.name.toLowerCase().includes(searchTerm)
     );
     console.log(results);
@@ -89,7 +89,7 @@ export default function ProductsSearchfilter() {
                 </ul>
               ) : (
                 <ul className="display column">
-                  {newTab.map((item, index) => (
+                  {tab.map((item, index) => (
                     <li key={index}>
                       {item.name}
                       <img src={item.picture} />
