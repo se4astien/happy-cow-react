@@ -26,7 +26,7 @@ export default function CardProductDetailsHero() {
       );
     } else {
       stars.push(
-        <li className="grey">
+        <li className="white">
           <ion-icon key={i} name="star"></ion-icon>
         </li>
       );
@@ -44,7 +44,7 @@ export default function CardProductDetailsHero() {
               <ul>
                 <li>{stars}</li>
               </ul>
-              <span>( 3 reviews )</span>
+              <span>{location.state.rating} ratings </span>
             </div>
           </div>
 

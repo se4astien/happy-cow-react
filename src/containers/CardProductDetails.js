@@ -67,7 +67,7 @@ export default function CardProductDetails() {
             </ul>
           </div> */}
 
-          <div className="listing-images flex">
+          {/* <div className="listing-images flex">
             <AliceCarousel mouseTrackingEnabled>
               {location.state.pictures.map((item, index) => {
                 return (
@@ -81,18 +81,18 @@ export default function CardProductDetails() {
                 );
               })}
             </AliceCarousel>
-          </div>
-
-          {/* <div className="listing-images flex">
-            <div>
-              <img src={location.state.picture[0]} alt="#" />
-              <img src={location.state.picture[1]} alt="#" />
-              <img src={location.state.picture[2]} alt="#" />
-              <img src={location.state.picture[3]} alt="#" />
-              <img src={location.state.picture[4]} alt="#" />
-              <img src={location.state.picture[5]} alt="#" />
-            </div>
           </div> */}
+
+          <div className="listing-images flex">
+            <div>
+              <img src={location.state.pictures[0]} alt="#" />
+              <img src={location.state.pictures[1]} alt="#" />
+              <img src={location.state.pictures[2]} alt="#" />
+              <img src={location.state.pictures[3]} alt="#" />
+              <img src={location.state.pictures[4]} alt="#" />
+              <img src={location.state.pictures[5]} alt="#" />
+            </div>
+          </div>
         </div>
 
         <CardProductDetailsMap />

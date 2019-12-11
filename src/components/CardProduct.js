@@ -41,7 +41,23 @@ const CardProduct = ({ products, loading }) => {
               </Link>
             </div>
             <h3 className="no-margin no-padding ellipsis">
-              <Link to={`/card-product-details/${product.placeId}`}>
+              <Link
+                to={{
+                  pathname: `/card-product-details/${product.placeId}`,
+                  state: {
+                    name: product.name,
+                    description: product.description,
+                    address: product.address,
+                    phone: product.phone,
+                    pictures: product.pictures,
+                    rating: product.rating,
+                    location: {
+                      lng: product.location.lng,
+                      lat: product.location.lat
+                    }
+                  }
+                }}
+              >
                 {product.name}
               </Link>
             </h3>

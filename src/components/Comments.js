@@ -8,22 +8,19 @@ const Comments = () => {
   return (
     <div className="ui container comments">
       <h3 className="ui dividing header">Comments</h3>
-      <ApprovalCard>
-        <CommentDetail
-          author="Sam"
-          timeAgo="Today at 2PM"
-          content="I like writing"
-          avatar={faker.image.avatar()}
-        />
-      </ApprovalCard>
-      <ApprovalCard>
-        <CommentDetail
-          author="Alex"
-          timeAgo="Yesterday at 4PM"
-          content="Too cool dure !"
-          avatar={faker.image.avatar()}
-        />
-      </ApprovalCard>
+      <CommentDetail
+        author="Sam"
+        timeAgo="Today at 2PM"
+        content="I like writing"
+        avatar={faker.image.avatar()}
+      />
+      <CommentDetail
+        author="Alex"
+        timeAgo="Yesterday at 4PM"
+        content="Too cool dure !"
+        avatar={faker.image.avatar()}
+      />
+
       <ApprovalCard>
         <CommentDetail
           author="Jane"

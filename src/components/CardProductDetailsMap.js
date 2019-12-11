@@ -21,7 +21,7 @@ function CardProductDetailsMap() {
   useEffect(() => {
     mapRef.current = L.map("map", {
       center: [location.state.location.lat, location.state.location.lng],
-      zoom: 14,
+      zoom: 16,
       layers: [
         L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
           attribution:
