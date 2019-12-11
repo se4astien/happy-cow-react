@@ -1,13 +1,28 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { useLocation } from "react-router";
 import L from "leaflet";
 
 const ProductsSearchFilterMap = () => {
+  let location = useLocation();
+  // console.log(location);
+
+  // coordonnées du marker
+  const [markersData, setMarkersData] = useState([
+    {
+      latLng: {
+        lat: 48.862881,
+        lng: 2.351543
+      },
+      title: 1
+    }
+  ]);
+
   // create map
   const mapRef = useRef(null);
   useEffect(() => {
     mapRef.current = L.map("map", {
-      center: [49.8419, 24.0315],
-      zoom: 16,
+      center: [48.862881, 2.351543],
+      zoom: 14,
       layers: [
         L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
           attribution:
@@ -17,11 +32,20 @@ const ProductsSearchFilterMap = () => {
     });
   }, []);
 
-  // add layer map
+  // add layer
   const layerRef = useRef(null);
   useEffect(() => {
     layerRef.current = L.layerGroup().addTo(mapRef.current);
   }, []);
+
+  // update markers
+  useEffect(() => {
+    layerRef.current.clearLayers();
+    markersData.forEach(marker => {
+      L.marker(marker.latLng, { title: marker.title }).addTo(layerRef.current);
+    });
+  }, [markersData]);
+
   return (
     <div className="search-filter-map">
       <div id="map"></div>

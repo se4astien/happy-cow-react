@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useLocation } from "react-router";
+import { useLocation } from "react-router"; // reçoit des données d'un Link
 import L from "leaflet";
 
 function CardProductDetailsMap() {
   let location = useLocation();
-  console.log(location);
+  // console.log(location);
   // coordonnées du marker
   const [markersData, setMarkersData] = useState([
     {
