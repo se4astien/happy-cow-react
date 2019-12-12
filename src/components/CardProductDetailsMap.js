@@ -9,8 +9,8 @@ function CardProductDetailsMap() {
   const [markersData, setMarkersData] = useState([
     {
       latLng: {
-        lat: location.state.location.lat,
-        lng: location.state.location.lng
+        lat: location.state.coordinates.lat,
+        lng: location.state.coordinates.lng
       },
       title: 1
     }
@@ -20,7 +20,7 @@ function CardProductDetailsMap() {
   const mapRef = useRef(null);
   useEffect(() => {
     mapRef.current = L.map("map", {
-      center: [location.state.location.lat, location.state.location.lng],
+      center: [location.state.coordinates.lat, location.state.coordinates.lng],
       zoom: 16,
       layers: [
         L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
@@ -59,13 +59,13 @@ function CardProductDetailsMap() {
               </div>
             </div>
             <div className="price">
-              <span>Price</span>
+              <span>{location.state.price}</span>
               <div>
                 <span></span>
               </div>
             </div>
             <div className="social">
-              <span>Website</span>
+              <span>{location.state.website}</span>
               <div>
                 <span></span>
               </div>
