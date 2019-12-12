@@ -1,37 +1,31 @@
 import React, { useEffect, useState, useRef } from "react";
 import L from "leaflet";
 
-const ProductsSearchFilterMap = props => {
-  // console.log(props.tab); // affiche mon objet tab
-  // console.log(props.tab && props.products[1].name); // affiche mon objet tab
-  // console.log(props.tab && props.tab[1].name);
-  // let tabLatitude = [];
-  // let tabLongitude = [];
-  // // on parcourt l'objet tab
-  // for (let key in props.tab) {
-  //   if (props.tab.hasOwnProperty(key)) {
-  //     // let latitude = props.tab[key].location.lat;
-  //     // let longitude = props.tab[key].location.lng;
-  //     // console.log(latitude); // récupère les données latitude pour chaque resturant
-  //     // console.log(longitude); // idem pour la longitude
+const ProductsSearchFilterMap = ({ tab, loading }) => {
+  // console.log(tab); // affiche mon objet tab
 
-  //     tabLatitude.push(props.tab[key].location.lat);
-  //     tabLongitude.push(props.tab[key].location.lng);
-  //   }
-  // }
-  // // console.log("tableau latitude : " + tabLatitude);
-  // // console.log("tableau longitude : " + tabLatitude);
+  // Pour afficher les données contenus dans les clés du tableau 'tab', on doit parcourir l'objet
+  // 1. On initialise un tableau à vide au départ
+  // let newTab = [];
+  // 2. On parcourt l'objet
+  const keys = Object.keys(tab);
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+    // console.log(tab[key].location); // {lng: 2.358393, lat: 48.861446}
+    let coord = tab[key].location;
+    console.log(coord);
+    // newTab.push(tab[key].location);
+  }
 
   // coordonnées du marker
-  const [markersData, setMarkersData] = useState([
+  const markersData = [
     {
       latLng: {
         lat: 48.862881,
         lng: 2.351543
-      },
-      title: 1
+      }
     }
-  ]);
+  ];
 
   // create map
   const mapRef = useRef(null);
@@ -58,9 +52,13 @@ const ProductsSearchFilterMap = props => {
   useEffect(() => {
     layerRef.current.clearLayers();
     markersData.forEach(marker => {
-      L.marker(marker.latLng, { title: marker.title }).addTo(layerRef.current);
+      L.marker(marker.latLng).addTo(layerRef.current);
     });
   }, [markersData]);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <>

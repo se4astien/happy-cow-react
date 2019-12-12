@@ -30,19 +30,17 @@ export default function ProductsSearchfilter() {
       for (let i = 0; i < res.data.length; i++) {
         // On créer un objet avec des clés (name, picture, ect...) qu'on push dans tab
         tab.push({
+          id: res.data[i].placeId,
           name: res.data[i].name,
           picture: res.data[i].thumbnail,
-          price: res.data[i].price,
           location: {
             lng: res.data[i].location.lng,
             lat: res.data[i].location.lat
           }
         });
       }
-
       setTab(tab);
-      // console.log(tab); (924) [{...}]
-      console.log(tab.name);
+      // console.log(tab); // (924) [{...}]
     };
     fetchData();
   }, []); // permet d'arrêter le chargement du composant
@@ -116,7 +114,7 @@ export default function ProductsSearchfilter() {
             </div>
           </div>
         </div>
-        <ProductsSearchFilterMap tab={tab} />
+        <ProductsSearchFilterMap tab={tab} loading={loading} />;
       </div>
     </section>
   );
