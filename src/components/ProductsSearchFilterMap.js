@@ -4,16 +4,14 @@ import L from "leaflet";
 const ProductsSearchFilterMap = ({ tab, loading }) => {
   // console.log(tab); // affiche mon objet tab
 
-  // Pour afficher les données contenus dans les clés du tableau 'tab', on doit parcourir l'objet
-  // 1. On initialise un tableau à vide au départ
   // let newTab = [];
-  // 2. On parcourt l'objet
+  let coord;
+  // 1. On parcourt l'objet keys
   const keys = Object.keys(tab);
   for (let i = 0; i < keys.length; i++) {
     const key = keys[i];
-    // console.log(tab[key].location); // {lng: 2.358393, lat: 48.861446}
-    let coord = tab[key].location;
-    console.log(coord);
+    coord = tab[key].location;
+    // console.log(coord); // {lng: 2.358393, lat: 48.861446}
     // newTab.push(tab[key].location);
   }
 
@@ -62,13 +60,14 @@ const ProductsSearchFilterMap = ({ tab, loading }) => {
 
   return (
     <>
-      {/* <div
+      <div
         onClick={() => {
-          console.log(props.tab && props.tab[1].name); // dès que tu as trouvé tab, vas chercher tab[1].name
+          // console.log(tab && tab[1].name); // dès que tu as trouvé tab, vas chercher tab[1].name
+          console.log(coord);
         }}
       >
         Se connecter
-      </div> */}
+      </div>
       <div className="search-filter-map">
         <div id="map"></div>
       </div>
