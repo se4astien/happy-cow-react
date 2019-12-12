@@ -28,11 +28,21 @@ export default function ProductsSearchfilter() {
       const tab = [];
       // on boucle sur res.data
       for (let i = 0; i < res.data.length; i++) {
-        // On créer un objet avec une clé 'name' et 'picture' qu'on push dans tab
-        tab.push({ name: res.data[i].name, picture: res.data[i].thumbnail });
+        // On créer un objet avec des clés (name, picture, ect...) qu'on push dans tab
+        tab.push({
+          name: res.data[i].name,
+          picture: res.data[i].thumbnail,
+          price: res.data[i].price,
+          location: {
+            lng: res.data[i].location.lng,
+            lat: res.data[i].location.lat
+          }
+        });
       }
+
       setTab(tab);
-      // console.log(tab);
+      // console.log(tab); (924) [{...}]
+      console.log(tab.name);
     };
     fetchData();
   }, []); // permet d'arrêter le chargement du composant
@@ -45,11 +55,11 @@ export default function ProductsSearchfilter() {
     setSearchTerm(event.target.value);
   };
   useEffect(() => {
-    // 1. Afin de faire une recherche, on doit filtrer des éléments d'un tableau.
+    // 1. Afin de faire une recherche, on doit filtrer des éléments d'un tableau (ici tab).
     const results = tab.filter(item =>
       item.name.toLowerCase().includes(searchTerm)
     );
-    console.log(results);
+    // console.log(results);
     setSearchResults(results);
   }, [searchTerm]); // composant qui se recharge à chaque lettre tapé par l'utilisateur
   /////////////////////
@@ -85,6 +95,7 @@ export default function ProductsSearchfilter() {
                       <img src={item.picture} />
                       <div>
                         <p>{item.name}</p>
+                        <p>{item.price}</p>
                       </div>
                     </li>
                   ))}
@@ -96,6 +107,7 @@ export default function ProductsSearchfilter() {
                       <img src={item.picture} />
                       <div>
                         <p>{item.name}</p>
+                        <p>{item.price}</p>
                       </div>
                     </li>
                   ))}
@@ -104,7 +116,7 @@ export default function ProductsSearchfilter() {
             </div>
           </div>
         </div>
-        <ProductsSearchFilterMap />
+        <ProductsSearchFilterMap tab={tab} />
       </div>
     </section>
   );
