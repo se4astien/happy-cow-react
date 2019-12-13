@@ -65,7 +65,7 @@ export default function ProductsSearchfilter() {
   let count = products.length;
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <div class="ui active centered inline loader"></div>;
   }
 
   return (

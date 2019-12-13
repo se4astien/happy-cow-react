@@ -9,8 +9,8 @@ const ProductsSearchFilterMap = ({ tab, loading }) => {
   const mapRef = useRef(null);
   useEffect(() => {
     mapRef.current = L.map("map", {
-      center: [48.862881, 2.351543],
-      zoom: 13,
+      center: [48.873819, 2.295141],
+      zoom: 15,
       layers: [
         L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
           attribution:
@@ -56,10 +56,10 @@ const ProductsSearchFilterMap = ({ tab, loading }) => {
       // console.log("8");
     });
     // console.log("9");
-  }, [tab]);
+  }, [tab]); // on écoute ce qu'il y a dans 'tab' et on l'affiche
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <div class="ui active centered inline loader"></div>;
   }
 
   return (
