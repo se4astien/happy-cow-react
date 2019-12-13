@@ -4,14 +4,15 @@ import L from "leaflet";
 const ProductsSearchFilterMap = ({ tab, loading }) => {
   // console.log(tab); // affiche mon objet tab
 
-  // let newTab = [];
   let coord;
+  // let newTab = [];
+
   // 1. On parcourt l'objet keys
   const keys = Object.keys(tab);
   for (let i = 0; i < keys.length; i++) {
     const key = keys[i];
     coord = tab[key].location;
-    // console.log(coord); // {lng: 2.358393, lat: 48.861446}
+    console.log(coord); // {lng: 2.358393, lat: 48.861446}
     // newTab.push(tab[key].location);
   }
 

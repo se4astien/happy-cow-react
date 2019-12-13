@@ -90,7 +90,7 @@ export default function ProductsSearchfilter() {
                 <ul className="search-filter-results">
                   {searchResults.map((item, index) => (
                     <li key={index}>
-                      <img src={item.picture} />
+                      <img src={item.picture} alt={item.name} />
                       <div>
                         <p>{item.name}</p>
                         <p>{item.price}</p>
@@ -102,7 +102,7 @@ export default function ProductsSearchfilter() {
                 <ul className="search-filter-results">
                   {tab.map((item, index) => (
                     <li key={index}>
-                      <img src={item.picture} />
+                      <img src={item.picture} alt={item.name} />
                       <div>
                         <p>{item.name}</p>
                         <p>{item.price}</p>

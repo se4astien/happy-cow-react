@@ -63,7 +63,7 @@ const CardProduct = ({ products, loading }) => {
                 {product.name}
               </Link>
             </h3>
-            <p className="localisation no-margin">Vendays-montalivet, France</p>
+            <p className="localisation no-margin">Paris, France</p>
             <Reviews product={product} />
             <p className="description no-margin">{product.description}</p>
           </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router";
-import AliceCarousel from "react-alice-carousel";
+// import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 // CSS
 import "../css/CardProductDetails.css";
@@ -11,7 +11,7 @@ import Comments from "../components/Comments";
 
 export default function CardProductDetails() {
   let location = useLocation();
-  const handleOnDragStart = e => e.preventDefault();
+  // const handleOnDragStart = e => e.preventDefault();
 
   return (
     <>
