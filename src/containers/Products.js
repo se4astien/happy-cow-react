@@ -53,7 +53,9 @@ const Products = () => {
         <div className="card-list center">
           <h2>Vegan Food Near Me</h2>
           <div className="view-all">
-            <Link to={"/products-search/" + city}>View all ></Link>
+            <Link to={"/products-search/" + city}>
+              View all<i class="angle right icon"></i>
+            </Link>
           </div>
         </div>
         <CardProduct products={currentProducts} loading={loading} />

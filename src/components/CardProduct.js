@@ -9,7 +9,7 @@ import Reviews from "./Reviews";
 
 const CardProduct = ({ products, loading }) => {
   if (loading) {
-    return <h2>Loading...</h2>;
+    return <div class="ui active centered inline loader"></div>;
   }
   return (
     <ul className="card-list full-space">

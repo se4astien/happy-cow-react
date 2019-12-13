@@ -17,18 +17,16 @@ const Comments = () => {
       <CommentDetail
         author="Alex"
         timeAgo="Yesterday at 4PM"
-        content="Too cool dure !"
+        content="Awesome blog !"
         avatar={faker.image.avatar()}
       />
 
-      <ApprovalCard>
-        <CommentDetail
-          author="Jane"
-          timeAgo="Monday at 1PM"
-          content="Nice blog post"
-          avatar={faker.image.avatar()}
-        />
-      </ApprovalCard>
+      <CommentDetail
+        author="Jane"
+        timeAgo="Monday at 1PM"
+        content="Nice blog post"
+        avatar={faker.image.avatar()}
+      />
       <form className="ui reply form">
         <div className="field">
           <textarea></textarea>
