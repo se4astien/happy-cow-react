@@ -1,17 +1,16 @@
 import React from "react";
 import { useLocation } from "react-router";
-// import AliceCarousel from "react-alice-carousel";
-import "react-alice-carousel/lib/alice-carousel.css";
+import { Link } from "react-router-dom";
 // CSS
 import "../css/CardProductDetails.css";
 // Components
 import CardProductDetailsHero from "../components/CardProductDetailsHero";
+import CardProductDetailsGallery from "../components/CardProductDetailsGallery";
 import CardProductDetailsMap from "../components/CardProductDetailsMap";
 import Comments from "../components/Comments";
 
 export default function CardProductDetails() {
   let location = useLocation();
-  // const handleOnDragStart = e => e.preventDefault();
 
   return (
     <>
@@ -50,7 +49,7 @@ export default function CardProductDetails() {
             </p>
           </div>
 
-          {/* <div className="actions">
+          <div className="actions">
             <ul>
               <li>
                 <Link to="#" className="btn btn-purple">
@@ -65,34 +64,9 @@ export default function CardProductDetails() {
                 </Link>
               </li>
             </ul>
-          </div> */}
-
-          {/* <div className="listing-images flex">
-            <AliceCarousel mouseTrackingEnabled>
-              {location.state.pictures.map((item, index) => {
-                return (
-                  <li key={index}>
-                    <img
-                      src={item}
-                      onDragStart={handleOnDragStart}
-                      className="yours-custom-class"
-                    />
-                  </li>
-                );
-              })}
-            </AliceCarousel>
-          </div> */}
-
-          <div className="listing-images flex">
-            <div>
-              <img src={location.state.pictures[0]} alt="#" />
-              <img src={location.state.pictures[1]} alt="#" />
-              <img src={location.state.pictures[2]} alt="#" />
-              <img src={location.state.pictures[3]} alt="#" />
-              <img src={location.state.pictures[4]} alt="#" />
-              <img src={location.state.pictures[5]} alt="#" />
-            </div>
           </div>
+
+          <CardProductDetailsGallery />
         </div>
 
         <CardProductDetailsMap />
