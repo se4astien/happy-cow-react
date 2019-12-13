@@ -50,7 +50,7 @@ const ProductsSearchFilterMap = ({ tab, loading }) => {
     layerRef.current.clearLayers();
     // console.log("6");
 
-    markersData.forEach(marker => {
+    markersData.map(marker => {
       // console.log("7");
       L.marker(marker.latLng).addTo(layerRef.current);
       // console.log("8");
