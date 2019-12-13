@@ -2,29 +2,28 @@ import React, { useEffect, useState, useRef } from "react";
 import L from "leaflet";
 
 const ProductsSearchFilterMap = ({ tab, loading }) => {
-  // console.log(tab); // affiche mon objet tab
+  console.log(tab); // affiche mon objet tab
 
-  let coord;
-  // let newTab = [];
+  //console.log(markersData);
 
-  // 1. On parcourt l'objet keys
-  const keys = Object.keys(tab);
-  for (let i = 0; i < keys.length; i++) {
-    const key = keys[i];
-    coord = tab[key].location;
-    console.log(coord); // {lng: 2.358393, lat: 48.861446}
-    // newTab.push(tab[key].location);
-  }
+  // console.log(tab.name); // affiche mon objet tab
+
+  // let coord;
+  //let newTab = [];
+
+  // // 1. On parcourt l'objet keys
+  // const keys = Object.keys(tab);
+  // for (let i = 0; i < keys.length; i++) {
+  //   const key = keys[i];
+  //   // coord = tab[key].location;
+  //   // console.log(coord); // {lng: 2.358393, lat: 48.861446}
+  //   newTab.push(tab[key].location);
+  //   // console.log(newTab[i].lat);
+  // }
+
+  // console.log(newTab);
 
   // coordonnées du marker
-  const markersData = [
-    {
-      latLng: {
-        lat: 48.862881,
-        lng: 2.351543
-      }
-    }
-  ];
 
   // create map
   const mapRef = useRef(null);
@@ -49,11 +48,36 @@ const ProductsSearchFilterMap = ({ tab, loading }) => {
 
   // update markers
   useEffect(() => {
+    console.log("1");
+    let markersData = [
+      // {
+      //   latLng: {
+      //     lat: 48.862881,
+      //     lng: 2.351543
+      //   }
+      // }
+    ];
+    console.log("2");
+    console.log(tab);
+    for (let i = 0; i < tab.length; i++) {
+      console.log("3");
+      //console.log(tab[i].location);
+      markersData.push({
+        latLng: tab[i].location
+      });
+      console.log("4");
+    }
+    console.log("5");
     layerRef.current.clearLayers();
+    console.log("6");
+
     markersData.forEach(marker => {
+      // console.log("7");
       L.marker(marker.latLng).addTo(layerRef.current);
+      // console.log("8");
     });
-  }, [markersData]);
+    console.log("9");
+  }, [tab]);
 
   if (loading) {
     return <p>Loading...</p>;
@@ -64,7 +88,7 @@ const ProductsSearchFilterMap = ({ tab, loading }) => {
       <div
         onClick={() => {
           // console.log(tab && tab[1].name); // dès que tu as trouvé tab, vas chercher tab[1].name
-          console.log(coord);
+          console.log(tab.name);
         }}
       >
         Se connecter
