@@ -9,12 +9,12 @@ import Reviews from "./Reviews";
 
 const CardProduct = ({ products, loading }) => {
   if (loading) {
-    return <div class="ui active centered inline loader"></div>;
+    return <div className="ui active centered inline loader"></div>;
   }
   return (
     <ul className="card-list full-space">
-      {products.map(item => (
-        <li key={item.id}>
+      {products.map((item, index) => (
+        <li key={index}>
           <div className="card">
             <div className="card-picture">
               <Link

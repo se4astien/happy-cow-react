@@ -55,7 +55,7 @@ const Products = () => {
           <h2>Vegan Food Near Me</h2>
           <div className="view-all">
             <Link to={"/products-search/" + city}>
-              View all<i class="angle right icon"></i>
+              View all<i className="angle right icon"></i>
             </Link>
           </div>
         </div>
