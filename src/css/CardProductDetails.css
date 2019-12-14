@@ -128,7 +128,7 @@ header {
 .details-desc .listing-images img {
   width: 225px;
   height: 225px;
-  margin-right: 29px;
+  margin-right: 20px;
   object-fit: cover;
   border-radius: 10px;
 }
