@@ -32,7 +32,8 @@ export default function ProductsSearchfilter() {
         tab.push({
           id: res.data[i].placeId,
           name: res.data[i].name,
-          picture: res.data[i].thumbnail,
+          thumbnail: res.data[i].thumbnail,
+          phone: res.data[i].phone,
           location: {
             lng: res.data[i].location.lng,
             lat: res.data[i].location.lat
@@ -89,13 +90,15 @@ export default function ProductsSearchfilter() {
               {searchTerm && searchTerm ? (
                 <ul className="search-filter-results">
                   {searchResults.map((item, index) => (
-                    <li key={index}>
-                      <img src={item.picture} alt={item.name} />
-                      <div>
-                        <p>{item.name}</p>
-                        <p>{item.price}</p>
-                      </div>
-                    </li>
+                    <Link to={`/card-product-details/${item.id}`}>
+                      <li key={index}>
+                        <img src={item.thumbnail} alt={item.name} />
+                        <div>
+                          <p>{item.name}</p>
+                          <p>{item.price}</p>
+                        </div>
+                      </li>
+                    </Link>
                   ))}
                 </ul>
               ) : (
@@ -121,7 +124,7 @@ export default function ProductsSearchfilter() {
                       }}
                     >
                       <li key={index}>
-                        <img src={item.picture} alt={item.name} />
+                        <img src={item.thumbnail} alt={item.name} />
                         <div>
                           <p>{item.name}</p>
                           <p>{item.price}</p>

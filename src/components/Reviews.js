@@ -1,18 +1,18 @@
 import React from "react";
 
-const Reviews = ({ product }) => {
+const Reviews = ({ item }) => {
   // Ratings
   const stars = [];
   const half = 0.5;
 
   for (let i = half; i < 5; i++) {
-    if (i < product.rating) {
+    if (i < item.rating) {
       stars.push(
         <li className="yellowgreen">
           <ion-icon key={i} name="star"></ion-icon>
         </li>
       );
-    } else if (i <= product.rating) {
+    } else if (i <= item.rating) {
       stars.push(
         <li className="yellowgreen">
           <ion-icon key={i} name="star-half"></ion-icon>
@@ -32,7 +32,7 @@ const Reviews = ({ product }) => {
       <ul>
         <li>{stars}</li>
       </ul>
-      <span>{product.rating} reviews</span>
+      <span>{item.rating} reviews</span>
     </div>
   );
 };

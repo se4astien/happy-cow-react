@@ -13,30 +13,30 @@ const CardProduct = ({ products, loading }) => {
   }
   return (
     <ul className="card-list full-space">
-      {products.map(product => (
-        <li key={product.id}>
+      {products.map(item => (
+        <li key={item.id}>
           <div className="card">
             <div className="card-picture">
               <Link
                 to={{
-                  pathname: `/card-product-details/${product.placeId}`,
+                  pathname: `/card-product-details/${item.placeId}`,
                   state: {
-                    name: product.name,
-                    description: product.description,
-                    address: product.address,
-                    phone: product.phone,
-                    pictures: product.pictures,
-                    rating: product.rating,
+                    name: item.name,
+                    description: item.description,
+                    address: item.address,
+                    phone: item.phone,
+                    pictures: item.pictures,
+                    rating: item.rating,
                     coordinates: {
-                      lng: product.location.lng,
-                      lat: product.location.lat
+                      lng: item.location.lng,
+                      lat: item.location.lat
                     },
-                    price: product.price,
-                    website: product.website
+                    price: item.price,
+                    website: item.website
                   }
                 }}
               >
-                <img src={product.thumbnail} alt={product.name} />
+                <img src={item.thumbnail} alt={item.name} />
                 <span>
                   <ion-icon name="heart-empty"></ion-icon>
                 </span>
@@ -45,29 +45,29 @@ const CardProduct = ({ products, loading }) => {
             <h3 className="no-margin no-padding ellipsis">
               <Link
                 to={{
-                  pathname: `/card-product-details/${product.placeId}`,
+                  pathname: `/card-product-details/${item.placeId}`,
                   state: {
-                    name: product.name,
-                    description: product.description,
-                    address: product.address,
-                    phone: product.phone,
-                    pictures: product.pictures,
-                    rating: product.rating,
+                    name: item.name,
+                    description: item.description,
+                    address: item.address,
+                    phone: item.phone,
+                    pictures: item.pictures,
+                    rating: item.rating,
                     coordinates: {
-                      lng: product.location.lng,
-                      lat: product.location.lat
+                      lng: item.location.lng,
+                      lat: item.location.lat
                     },
-                    price: product.price,
-                    website: product.website
+                    price: item.price,
+                    website: item.website
                   }
                 }}
               >
-                {product.name}
+                {item.name}
               </Link>
             </h3>
             <p className="localisation no-margin">Paris, France</p>
-            <Reviews product={product} />
-            <p className="description no-margin">{product.description}</p>
+            <Reviews item={item} />
+            <p className="description no-margin">{item.description}</p>
           </div>
         </li>
       ))}

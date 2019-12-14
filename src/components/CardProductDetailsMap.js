@@ -52,6 +52,7 @@ function CardProductDetailsMap({ latitude, longitude, price, website }) {
               <span>Features</span>
               <div>
                 <span>Outdoor seating</span>
+                <br />
                 <span>Accepts credit cards</span>
               </div>
             </div>
