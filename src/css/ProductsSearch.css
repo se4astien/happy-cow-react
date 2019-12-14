@@ -78,6 +78,10 @@
 .search-filter .search-filter-results li > div p {
   padding-top: 10px;
 }
+.search-filter-results li:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+}
 
 .search-filter-map #map {
   height: 800px;

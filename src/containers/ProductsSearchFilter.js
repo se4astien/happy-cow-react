@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 // Components
 import ProductsSearchFilterMap from "../components/ProductsSearchFilterMap";
 // CSS
@@ -101,13 +101,33 @@ export default function ProductsSearchfilter() {
               ) : (
                 <ul className="search-filter-results">
                   {tab.map((item, index) => (
-                    <li key={index}>
-                      <img src={item.picture} alt={item.name} />
-                      <div>
-                        <p>{item.name}</p>
-                        <p>{item.price}</p>
-                      </div>
-                    </li>
+                    <Link
+                      to={{
+                        pathname: `/card-product-details/${item.id}`,
+                        state: {
+                          name: item.name,
+                          description: item.description,
+                          address: item.address,
+                          phone: item.phone,
+                          pictures: item.pictures,
+                          rating: item.rating,
+                          coordinates: {
+                            lng: item.location.lng,
+                            lat: item.location.lat
+                          },
+                          price: item.price,
+                          website: item.website
+                        }
+                      }}
+                    >
+                      <li key={index}>
+                        <img src={item.picture} alt={item.name} />
+                        <div>
+                          <p>{item.name}</p>
+                          <p>{item.price}</p>
+                        </div>
+                      </li>
+                    </Link>
                   ))}
                 </ul>
               )}

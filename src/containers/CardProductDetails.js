@@ -66,7 +66,10 @@ export default function CardProductDetails() {
             </ul>
           </div>
 
-          <CardProductDetailsGallery />
+          <CardProductDetailsGallery
+            pictures={location.state.pictures}
+            name={location.state.name}
+          />
         </div>
 
         <CardProductDetailsMap />

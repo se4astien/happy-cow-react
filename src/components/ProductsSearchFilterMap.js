@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import L from "leaflet";
 
 const ProductsSearchFilterMap = ({ tab, loading }) => {

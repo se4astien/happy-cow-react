@@ -1,17 +1,17 @@
 import React from "react";
-import { useLocation } from "react-router";
 
-const CardProductDetailsGallery = () => {
-  let location = useLocation();
+const CardProductDetailsGallery = ({ pictures, name }) => {
+  const tabPicture = [];
+  for (let i = 0; i < pictures.length; i++) {
+    tabPicture.push(pictures[i]);
+  }
+  console.log(tabPicture);
+
   return (
     <>
       <div className="listing-images flex">
         <div>
-          <img src={location.state.pictures[1]} alt="#" />
-          <img src={location.state.pictures[2]} alt="#" />
-          <img src={location.state.pictures[3]} alt="#" />
-          <img src={location.state.pictures[4]} alt="#" />
-          <img src={location.state.pictures[5]} alt="#" />
+          <img src={tabPicture} alt={name} />
         </div>
       </div>
     </>
