@@ -8,9 +8,10 @@ import CardProductDetailsHero from "../components/CardProductDetailsHero";
 import CardProductDetailsGallery from "../components/CardProductDetailsGallery";
 import CardProductDetailsMap from "../components/CardProductDetailsMap";
 import Comments from "../components/Comments";
+import Footer from "../components/Footer";
 
 export default function CardProductDetails() {
-  let location = useLocation();
+  let location = useLocation(); // permet de récupérer les données envoyés via <Link />
 
   return (
     <>
@@ -72,12 +73,18 @@ export default function CardProductDetails() {
           />
         </div>
 
-        <CardProductDetailsMap />
+        <CardProductDetailsMap
+          latitude={location.state.coordinates.lat}
+          longitude={location.state.coordinates.lng}
+          price={location.state.price}
+          website={location.state.website}
+        />
       </section>
 
       <section className="wrapper comments">
         <Comments />
       </section>
+      <Footer />
     </>
   );
 }

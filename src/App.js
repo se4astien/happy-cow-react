@@ -26,7 +26,6 @@ export default function App() {
           <CardProductDetails />
         </Route>
       </Switch>
-      <Footer />
     </Router>
   );
 }

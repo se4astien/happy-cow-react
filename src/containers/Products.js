@@ -9,6 +9,7 @@ import "../css/Products.css";
 import Search from "../components/Search";
 import CardProduct from "../components/CardProduct";
 import Pagination from "../components/Pagination";
+import Footer from "../components/Footer";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -65,6 +66,7 @@ const Products = () => {
           paginate={paginate}
         />
       </section>
+      <Footer />
     </>
   );
 };

@@ -7,13 +7,14 @@
 }
 
 .search-filter,
-.search-filter-map {
+.search-filter-map,
+.search-filter-map #map {
   flex: 1;
+  height: 100vh;
 }
 
 .search-filter {
   overflow: auto;
-  height: 800px;
 }
 .search-filter .count {
   color: #7c4dc4;
@@ -81,8 +82,4 @@
 .search-filter-results li:hover {
   background: rgba(0, 0, 0, 0.1);
   transition: 0.2s;
-}
-
-.search-filter-map #map {
-  height: 800px;
 }

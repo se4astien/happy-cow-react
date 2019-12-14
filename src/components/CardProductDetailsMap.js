@@ -1,16 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useLocation } from "react-router";
 import L from "leaflet";
 
-function CardProductDetailsMap() {
-  let location = useLocation(); // permet de récupérer les données envoyés via <Link />
-
+function CardProductDetailsMap({ latitude, longitude, price, website }) {
   // coordonnées du marker
   const [markersData, setMarkersData] = useState([
     {
       latLng: {
-        lat: location.state.coordinates.lat,
-        lng: location.state.coordinates.lng
+        lat: latitude,
+        lng: longitude
       },
       title: 1
     }
@@ -20,7 +17,7 @@ function CardProductDetailsMap() {
   const mapRef = useRef(null);
   useEffect(() => {
     mapRef.current = L.map("map", {
-      center: [location.state.coordinates.lat, location.state.coordinates.lng],
+      center: [latitude, longitude],
       zoom: 16,
       layers: [
         L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
@@ -59,13 +56,13 @@ function CardProductDetailsMap() {
               </div>
             </div>
             <div className="price">
-              <span>{location.state.price}</span>
+              <span>{price}</span>
               <div>
                 <span></span>
               </div>
             </div>
             <div className="social">
-              <span>{location.state.website}</span>
+              <span>{website}</span>
               <div>
                 <span></span>
               </div>
