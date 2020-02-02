@@ -1,4 +1,4 @@
-# HappyCow :   Project with REACT and fetch data with Axios API.
+# HappyCow : Project with REACT and fetch API with Axios.
 
 React website clone 'HappyCow' with map.  
 You can select any restaurants in Paris, view all details.
@@ -19,7 +19,9 @@ https://happycow-react.netlify.com/
 
 ## Screenshots
 
-![](screenshots/leboncoin01.png)
+![](https://github.com/se4astien/happy-cow-react/blob/master/src/screenshots/happycow-01.png)
+![](https://github.com/se4astien/happy-cow-react/blob/master/src/screenshots/happycow-02.png)
+![](https://github.com/se4astien/happy-cow-react/blob/master/src/screenshots/happycow-03.png)
 
 
 ## Available Scripts
