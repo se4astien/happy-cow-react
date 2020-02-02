@@ -1,4 +1,26 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# HappyCow : Project with REACT and fetch data with Axios API.
+
+React website clone 'HappyCow' with map.  
+You can select any restaurants in Paris, view all details.
+
+You can search by text filter and see the location of the restaurant with map.  
+Add gallery of pictures and results with paging for the restaurants fetched.
+
+## Installation
+
+```javascript
+npx create-react-app
+```
+
+## Deployment
+
+Deploy on Netlify : 
+https://happycow-react.netlify.com/
+
+## Screenshots
+
+![](screenshots/leboncoin01.png)
+
 
 ## Available Scripts
 
