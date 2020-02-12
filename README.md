@@ -1,4 +1,4 @@
-# HappyCow : Project with REACT and fetch API with Axios.
+# HappyCow : Clone of HappyCow with REACT and Axios for API.
 
 React website clone 'HappyCow' with map.  
 You can select any restaurants in Paris, view all details.
