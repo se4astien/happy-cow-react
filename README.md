@@ -1,6 +1,6 @@
 # Clone of HappyCow with React, Axios and Map.
 
-React website clone 'HappyCow' with map.  
+React website clone 'HappyCow' with React-Leaflet for the map.  
 You can select any restaurants in Paris, view all details.
 
 You can search by text filter and see the location of the restaurant with map.  
